@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/12/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>每一步都有意义</title>
+    <url>/2021/12/14/%E6%AF%8F%E4%B8%80%E6%AD%A5%E9%83%BD%E6%9C%89%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><span id="more"></span>
+
+<ul>
+<li><p>列表1</p>
+</li>
+<li><p> 列表2</p>
+</li>
+</ul>
+<p>  ​     a  子列表1</p>
+<p>  ​     b  子列表2</p>
+<ul>
+<li><p>列表3</p>
+<p><strong>下方的两种加线的方式是用“三个减号”或者“三个星号”</strong></p>
+<hr>
+<hr>
+<p><a href="https://hubu2021.gitee.io/">gitee导航</a></p>
+<p><img src="https://ts1.cn.mm.bing.net/th?id=OIP-C.DBmNRXdg7Fz5hSSwR6ryhQAAAA&w=135&h=170&c=8&rs=1&qlt=90&o=6&dpr=1.56&pid=3.1&rm=2" alt="渡"></p>
+</li>
+</ul>
+<p><em>斜体这样的格式哦（在一对星号之间）</em></p>
+<p><strong>这样加粗哦（两对*号之间）</strong></p>
+<p><code>&lt;html&gt;&lt;/html&gt;代码块这样引用（tab键上方那个）（单行）</code></p>
+<p><strong>下面是多行的代码格式（三对tab键上方的那个英文点）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;我是标题哦&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">​```</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>我的内容是引用(用一个&gt;)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+</search>
