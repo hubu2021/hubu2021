@@ -19,6 +19,24 @@
 ]]></content>
   </entry>
   <entry>
+    <title>删除某些字符</title>
+    <url>/2021/12/15/%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%AD%97%E7%AC%A6/</url>
+    <content><![CDATA[<p>#<strong>用字符数组和字符指针做函数参数实现删除某字符的相同字符</strong></p>
+<ul>
+<li>如果正向思维来做，使用编程删除某相同字符，不好实现或者说不能实现（反正我不会），那就不妨逆向思维来解决——用if条件语句打印出不用背删除的字符，跳过被删除的字符，代码如下【字符数组创建不够完美，最好使用动态数组】</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">1000</span>],aim;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个字符串：&quot;</span>);</span><br><span class="line">	gets(a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;输入你要删除的字符：&quot;</span>);</span><br><span class="line">	aim = getchar();</span><br><span class="line">	dellit1(a,aim);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	dellit2(a,aim);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=aim)<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(*a!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(*a!=aim) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*a);</span><br><span class="line">		a++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;```</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>定积分</title>
     <url>/2021/12/15/%E5%AE%9A%E7%A7%AF%E5%88%86/</url>
     <content><![CDATA[<p>#定积分</p>
