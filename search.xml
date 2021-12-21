@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>删除某些字符/子串</title>
+    <url>/2021/12/15/%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%AD%97%E7%AC%A6/</url>
+    <content><![CDATA[<p>#<strong>用字符数组和字符指针做函数参数实现删除某字符的相同字符</strong></p>
+<ul>
+<li><p>如果正向思维来做，使用编程删除某相同字符，不好实现或者说不能实现（反正我不会），那就不妨逆向思维来解决——用if条件语句打印出不用背删除的字符，跳过被删除的字符，代码如下【字符数组创建不够完美，最好使用动态数组】</p>
+<span id="more"></span>
+
+<ul>
+<li><p>项目1：编写函数delCharFromStr实现如下功能：在字符串str中删除与指定的某个字符ch相同的字符。要求测试程序按如下格式输出：</p>
+<p>请输入一个字符串：a string from keybord!</p>
+<p>输入一个字符：o</p>
+<p>删除后的结果：a string frm keybrd!</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span> <span class="comment">//用数组参数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=aim)<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span> <span class="comment">//用指针参数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(*a!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(*a!=aim) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*a);</span><br><span class="line">		a++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;```</span><br></pre></td></tr></table></figure>
+
+<p>#删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）</p>
+<ul>
+<li><p>项目2：编写函数delSubstrFromStr实现如下功能：在字符串str中删除与指定的某个子串substr相同的字符。测试程序的格式同上。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span>; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">1000</span>],substr[<span class="number">1000</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个字符串：&quot;</span>);</span><br><span class="line">	gets(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;输入你要删除的字符子串：&quot;</span>);</span><br><span class="line">	gets(substr);</span><br><span class="line">	delSubstrFromStr(str,substr,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c[n],*p;<span class="comment">//c[n]是临时数组 </span></span><br><span class="line">	<span class="keyword">while</span>((p=<span class="built_in">strstr</span>(a,b))!=<span class="literal">NULL</span>)  </span><br><span class="line"><span class="comment">/*库函数strstr的作用找出b字符串第一次出现在a字符串的位置</span></span><br><span class="line"><span class="comment">（不包括b字符串的结束字符）。该函数返回该位置的指针，</span></span><br><span class="line"><span class="comment">若找不到，则返回空指针NULL */</span> </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(c,p+<span class="built_in">strlen</span>(b));   </span><br><span class="line">		*p=<span class="string">&#x27;\0&#x27;</span>;<span class="comment">//人为的添加字符串结束符&#x27;\0&#x27; </span></span><br><span class="line">		<span class="built_in">strcat</span>(a,c); </span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//puts(c); 可以看看c[n] 里面有什么 </span></span><br><span class="line">	<span class="built_in">puts</span>(a);</span><br><span class="line">&#125;```</span><br></pre></td></tr></table></figure>
+
+<p>#终极模式：进阶！！！</p>
+<p>##将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以<strong>一定要清理缓冲区</strong>，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> ch)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[N];</span><br><span class="line">	<span class="keyword">char</span> substr[N];</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你的字符串：&quot;</span>);</span><br><span class="line">	gets(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你要删除的字符：&quot;</span>);</span><br><span class="line">	ch=getchar();</span><br><span class="line">	delCharFromStr(str,ch);</span><br><span class="line">	fflush(<span class="built_in">stdin</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你要删除的子串：&quot;</span>);</span><br><span class="line">	gets(substr);</span><br><span class="line">	delSubstrFromStr(str,substr,N); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> ch)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=ch) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c[n],*p;</span><br><span class="line">	<span class="keyword">while</span>((p=<span class="built_in">strstr</span>(a,b))!=<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(c,p+<span class="built_in">strlen</span>(b));</span><br><span class="line">		*p=<span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">		<span class="built_in">strcat</span>(a,c); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">puts</span>(a);```</span><br></pre></td></tr></table></figure>
+
+
+
+<p>文章内容会持续更新、修改。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/12/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -17,24 +59,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>删除某些字符</title>
-    <url>/2021/12/15/%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%AD%97%E7%AC%A6/</url>
-    <content><![CDATA[<p>#<strong>用字符数组和字符指针做函数参数实现删除某字符的相同字符</strong></p>
-<ul>
-<li>如果正向思维来做，使用编程删除某相同字符，不好实现或者说不能实现（反正我不会），那就不妨逆向思维来解决——用if条件语句打印出不用背删除的字符，跳过被删除的字符，代码如下【字符数组创建不够完美，最好使用动态数组】</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">1000</span>],aim;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个字符串：&quot;</span>);</span><br><span class="line">	gets(a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;输入你要删除的字符：&quot;</span>);</span><br><span class="line">	aim = getchar();</span><br><span class="line">	dellit1(a,aim);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	dellit2(a,aim);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=aim)<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dellit2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(*a!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(*a!=aim) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*a);</span><br><span class="line">		a++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;```</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
   </entry>
   <entry>
     <title>定积分</title>
@@ -54,6 +78,11 @@
         <tag>导航</tag>
         <tag>分享</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>打印年历表</title>
+    <url>/2021/12/21/%E6%89%93%E5%8D%B0%E5%B9%B4%E5%8E%86%E8%A1%A8/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>每一步都有意义</title>
