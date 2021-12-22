@@ -1253,7 +1253,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #450eff;
+  background: #4d264f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2759,16 +2759,16 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
   color: var(--text-color);
-  font-family: "Lato", "PingFang SC", 'Microsoft YaHei', "sans-serif";
+  font-family: 'Lato', "PingFang SC", 'Microsoft YaHei', "sans-serif";
   font-size: lem;
   line-height: 2;
 }
 .header-inner {
-  opacity: 0.85;
+  opacity: 0.5;
 }
 .sidebar {
   transition-duration: 0.4s;
-  opacity: 0;
+  opacity: 0.5;
 }
 .content {
   padding-top: 15px;
@@ -2776,11 +2776,11 @@ body {
 }
 .header-inner {
   border-radius: 10px 10px 10px 10px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .sidebar {
   transition-duration: 0.4s;
-  opacity: 0.9;
+  opacity: 0.85;
   border-radius: 10px 10px 10px 10px;
 }
 .sidebar-inner {
