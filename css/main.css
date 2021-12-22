@@ -633,7 +633,7 @@ pre .javascript .function {
   background: #f0f0f0;
 }
 .post-body .label.primary {
-  background: #efe6f7;
+  background: #eefbfd;
 }
 .post-body .label.info {
   background: #e5f2f8;
@@ -820,18 +820,18 @@ pre .javascript .function {
   color: #777;
 }
 .post-body .note.primary {
-  border-left-color: #6f42c1;
+  border-left-color: #7fece7;
 }
 .post-body .note.primary h2,
 .post-body .note.primary h3,
 .post-body .note.primary h4,
 .post-body .note.primary h5,
 .post-body .note.primary h6 {
-  color: #6f42c1;
+  color: #7fece7;
 }
 .post-body .note.primary:not(.no-icon)::before {
   content: "\f055";
-  color: #6f42c1;
+  color: #7fece7;
 }
 .post-body .note.info {
   border-left-color: #428bca;
@@ -1253,7 +1253,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff400b;
+  background: #ff2ac8;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1496,9 +1496,10 @@ pre .javascript .function {
   width: 100%;
 }
 .with-love {
-  color: #ff0000;
+  color: #eee;
   display: inline-block;
   margin: 0 5px;
+  animation: iconAnimate 1.33s ease-in-out infinite;
 }
 .powered-by,
 .theme-info {
