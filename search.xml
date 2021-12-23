@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/12/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>删除某些字符/子串</title>
     <url>/2021/12/15/%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%AD%97%E7%AC%A6/</url>
     <content><![CDATA[<p>#<strong>用字符数组和字符指针做函数参数实现删除某字符的相同字符</strong></p>
@@ -33,6 +51,62 @@
 <p>文章内容会持续更新、修改。</p>
 </li>
 </ul>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大一期末考试</title>
+    <url>/2021/12/23/%E5%A4%A7%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
+    <content><![CDATA[<p>#第二题</p>
+<ul>
+<li><p>先定义一个函数isPrime判断正整数n是否是一个素数，若是则返回1，否则返回0。然后调用该函数找出200到2000之间的所有素数并输出，每行输出10个，最后输出所有素数的个数。要求输出格式如下所示：</p>
+<p>200-2000之间的所有素数:</p>
+<p>211  223  227  229  233  239  241  251  257  263 </p>
+<p>…… </p>
+<p>1951 1973 1979 1987 1993 1997 1999 </p>
+<p>共有257个素数。</p>
+<span id="more"></span>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">200</span>;i&lt;=<span class="number">2000</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(isPrime(i))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%-6d&quot;</span>,i);</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span>(cnt%<span class="number">10</span>==<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n共有有%d个素数&quot;</span>,cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;<span class="built_in">sqrt</span>(<span class="number">2000</span>);i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> flag;</span><br><span class="line">&#125;```</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>#第三题</p>
+<ul>
+<li><p>编写一个函数fun，完成如下功能：将十进制正整数m转换为k（2&lt;=k&lt;=9）进制数，把转换结果作为字符串返回。例如：输入8和2，则应输出：</p>
+<p>8的2进制数是：1000</p>
+<p>在下面所给出的程序片段的基础上给出你的完整代码。</p>
+<p>#include&lt;stdio.h&gt;</p>
+<p>char res[32]={0};//保存转换后的结果</p>
+<p>main()</p>
+<p>{     </p>
+<p>​    printf(“%d的%d进制数是：%s\n”,m,k,fun(m,k));</p>
+<p>} </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">fun</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> k)</span></span>;</span><br><span class="line"><span class="keyword">char</span> res[<span class="number">32</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,k; </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;你要把哪个十进制整数转换成几进制：&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;m,&amp;k);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d的%d进制数是：%s\n&quot;</span>,m,k,fun(m,k));	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">fun</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>,j;</span><br><span class="line">	<span class="keyword">for</span>(;i &lt;=<span class="number">32</span> &amp;&amp; m &gt; <span class="number">0</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		res[i] = <span class="string">&#x27;0&#x27;</span> + (m % k);</span><br><span class="line">		m /= k;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(j = <span class="number">0</span>;j&lt; i / <span class="number">2</span>; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> temp = res[j];</span><br><span class="line">		res[j] = res[i - j <span class="number">-1</span>];</span><br><span class="line">		res[i - j <span class="number">-1</span>] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>定积分</title>
+    <url>/2021/12/15/%E5%AE%9A%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<p>#定积分</p>
+<span id="more"></span>
+
+
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line">	<span class="comment">/*f(x)为函数举例，即被积函数*/</span></span><br><span class="line">	<span class="keyword">int</span> i,n;</span><br><span class="line">	<span class="comment">/*n为区间等分的个数，应尽可能大*/</span></span><br><span class="line">	<span class="keyword">double</span> a,b,h,s;</span><br><span class="line">	<span class="comment">/*a为积分下限，b为积分上限，h为步长*/</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分下限 a:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分上限 b:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;区间等分个数 n :\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	h=(b-a)/n;  <span class="comment">/*步长的计算*/</span></span><br><span class="line">	s=<span class="number">0.5</span>*(f(a)+f(a+h))*h;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;函数 f(x) 的积分值为 s=%10.6f\n&quot;</span>,s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*以下为被积函数的定义，即函数举例*/</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	y=x*x<span class="number">-3</span>*x+<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">return</span> (y);</span><br><span class="line">&#125;</span><br><span class="line">​```</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>C语言</category>
@@ -78,43 +152,6 @@
 <blockquote>
 <p>我的内容是引用(用一个&gt;)</p>
 </blockquote>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/12/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>定积分</title>
-    <url>/2021/12/15/%E5%AE%9A%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<p>#定积分</p>
-<span id="more"></span>
-
-
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line">	<span class="comment">/*f(x)为函数举例，即被积函数*/</span></span><br><span class="line">	<span class="keyword">int</span> i,n;</span><br><span class="line">	<span class="comment">/*n为区间等分的个数，应尽可能大*/</span></span><br><span class="line">	<span class="keyword">double</span> a,b,h,s;</span><br><span class="line">	<span class="comment">/*a为积分下限，b为积分上限，h为步长*/</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分下限 a:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分上限 b:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;区间等分个数 n :\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	h=(b-a)/n;  <span class="comment">/*步长的计算*/</span></span><br><span class="line">	s=<span class="number">0.5</span>*(f(a)+f(a+h))*h;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;函数 f(x) 的积分值为 s=%10.6f\n&quot;</span>,s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*以下为被积函数的定义，即函数举例*/</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	y=x*x<span class="number">-3</span>*x+<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">return</span> (y);</span><br><span class="line">&#125;</span><br><span class="line">​```</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>C语言</category>
