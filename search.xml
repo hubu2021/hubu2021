@@ -42,12 +42,10 @@
   <entry>
     <title>让Clion支持输出中文代码</title>
     <url>/2022/01/12/%E8%AE%A9Clion%E6%94%AF%E6%8C%81%E8%BE%93%E5%87%BA%E4%B8%AD%E6%96%87%E4%BB%A3%E7%A0%81/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h2 id="对C语言"><a href="#对C语言" class="headerlink" title="对C语言"></a>对C语言</h2><p>c语言在cmakelist.txt添加</p>
+    <content><![CDATA[<h2 id="对C语言"><a href="#对C语言" class="headerlink" title="对C语言"></a>对C语言</h2><p>c语言在cmakelist.txt添加</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set(CMAKE_C_FLAGS &quot;$&#123;CMAKE_C_FLAGS&#125; -Wall -fexec-charset=GBK&quot;)</span><br></pre></td></tr></table></figure>
 
-
+<span id="more"></span>
 
 <h2 id="对于C-语言"><a href="#对于C-语言" class="headerlink" title="对于C++语言"></a>对于C++语言</h2><p>c++在cmakelist.txt添加</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set(CMAKE_CXX_FLAGS &quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GBK&quot;)</span><br></pre></td></tr></table></figure>
@@ -107,11 +105,11 @@
 <p>**Translation **</p>
 <p><em><strong>Chinese parents pay a lot of attention to their children’s education. They hold that children are more willing to accomplish complicated tasks if adults can give them proper guidance. Therefore, “teaching by giving step-by-step directions” is taken as the best way to educate children. In recent years, under the influence of Western ideas of education, Chinese parents are beginning to give more priority to fostering independence and creativity in children. They encourage their children to attend interest classes to learn painting or music. They hope that their children will become all-round individuals by constantly learning and exploring.</strong></em></p>
 <hr>
-<h2 id="英语U5课本翻译"><a href="#英语U5课本翻译" class="headerlink" title="## 英语U5课本翻译"></a>## 英语U5课本翻译</h2><p><strong>最近的调查显示，中国手机网民的数量超过电脑网民，网民的手机上网率高达85.8％。手机已成为继电视、广播、报纸、杂志之后的第五大媒体。中国人通过手机上网，享受微博、微信、播客（podcast）等新媒体所带来的便利与好处。新媒体生动、实时、互动的特点吸引了大批的年轻人。微信朋友圈让人们能够经常与朋友互动交流，而播客则满足了人们表达自我、张扬个性的需要。</strong></p>
+<h2 id="英语U5课本翻译"><a href="#英语U5课本翻译" class="headerlink" title="英语U5课本翻译"></a>英语U5课本翻译</h2><p><strong>最近的调查显示，中国手机网民的数量超过电脑网民，网民的手机上网率高达85.8％。手机已成为继电视、广播、报纸、杂志之后的第五大媒体。中国人通过手机上网，享受微博、微信、播客（podcast）等新媒体所带来的便利与好处。新媒体生动、实时、互动的特点吸引了大批的年轻人。微信朋友圈让人们能够经常与朋友互动交流，而播客则满足了人们表达自我、张扬个性的需要。</strong></p>
 <p><strong>Translation</strong></p>
 <p><em><strong>A recent survey indicated that the number of people accessing the Internet by mobile phone has overtaken the number of Internet users on computers. Online access on mobile phones has risen to 85.8%. The mobile phone has become the fifth mass medium after the traditional four media: television, radio, newspapers and magazines. With online access by mobile phone, Chinese people are enjoying the conveniences and benefits of all kinds of new media like MicroBlog, WeChat and podcasts. The vividness, real-timeness and interactivity of such media have attracted many young people. While WeChat’s circle of friends enables people to communicate and interact frequently with friends, podcasts meet people’s need for self-expression and displaying individuality.</strong></em></p>
 <hr>
-<h2 id="英语U7课本翻译"><a href="#英语U7课本翻译" class="headerlink" title="##  英语U7课本翻译"></a>##  英语U7课本翻译</h2><p><strong>中国的农历七月七日是七夕节，是牛郎（Cowherd）织女（Weaving Maid）一年一次相会的日子。七夕节源于一个浪漫的爱情故事：天上的织女和人间的牛郎互相爱慕，结为夫妻，后来却被拆散。二人化作织女星（Vega）和牛郎星（Altair），被银河分隔，遥遥相望，每年只能企盼七月七日在鹊桥（Magpie Bridge）相会。在这天晚上，有情男女都会祈祷姻缘美满。作为中国颇具浪漫色彩的民俗节日，七夕节又被称为“中国情人节”。</strong></p>
+<h2 id="英语U7课本翻译"><a href="#英语U7课本翻译" class="headerlink" title="英语U7课本翻译"></a>英语U7课本翻译</h2><p><strong>中国的农历七月七日是七夕节，是牛郎（Cowherd）织女（Weaving Maid）一年一次相会的日子。七夕节源于一个浪漫的爱情故事：天上的织女和人间的牛郎互相爱慕，结为夫妻，后来却被拆散。二人化作织女星（Vega）和牛郎星（Altair），被银河分隔，遥遥相望，每年只能企盼七月七日在鹊桥（Magpie Bridge）相会。在这天晚上，有情男女都会祈祷姻缘美满。作为中国颇具浪漫色彩的民俗节日，七夕节又被称为“中国情人节”。</strong></p>
 <p><strong>Translation</strong></p>
 <p><em><strong>Qixi Festival celebrates the annual meeting of the Cowherd and the Weaving Maid on the seventh day of the seventh lunar month in China. The festival originates from a romantic love story. The Weaving Maid in the heaven and the Cowherd down on earth are attracted to each other and eventually get married. But later they are forced to break up. The two become the constellations Vega and the Altair, separated on either side of the Milky Way, and can only expect to meet each other once a year on Magpie Bridge. On that night, men and women that have affectionate feelings for each other will pray for a happy marriage. As the Qixi Festival is a traditional Chinese festival full of romance, it is also known as the “Chinese Valentine’s Day”.</strong></em></p>
 ]]></content>
