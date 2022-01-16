@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"hubu2021.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":true,"transition":{"post_block":"slideRightIn","post_header":"flipXIn","post_body":"slideRightIn","coll_header":"fadeIn","sidebar":"fadeIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="输出输入换行（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出 123456789101112#include &lt;iostream&gt;using namespace std;int main()&amp;#123;    int a &#x3D; 13;">
+  <meta name="description" content="输出输入换行（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++初步学习">
 <meta property="og:url" content="https://hubu2021.gitee.io/2022/01/16/C-%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Super">
-<meta property="og:description" content="输出输入换行（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出 123456789101112#include &lt;iostream&gt;using namespace std;int main()&amp;#123;    int a &#x3D; 13;">
+<meta property="og:description" content="输出输入换行（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-16T01:54:20.000Z">
-<meta property="article:modified_time" content="2022-01-16T03:48:03.216Z">
+<meta property="article:modified_time" content="2022-01-16T11:19:02.922Z">
 <meta property="article:author" content="渡">
 <meta name="twitter:card" content="summary">
 
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-16 09:54:20 / 修改时间：11:48:03" itemprop="dateCreated datePublished" datetime="2022-01-16T09:54:20+08:00">2022-01-16</time>
+              <time title="创建时间：2022-01-16 09:54:20 / 修改时间：19:19:02" itemprop="dateCreated datePublished" datetime="2022-01-16T09:54:20+08:00">2022-01-16</time>
             </span>
 
           
@@ -249,6 +249,8 @@
 
       
         <h2 id="输出输入换行"><a href="#输出输入换行" class="headerlink" title="输出输入换行"></a>输出输入换行</h2><p>（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出</p>
+<span id="more"></span>
+
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">char</span> c = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    <span class="keyword">float</span> d = <span class="number">123.12f</span>;</span><br><span class="line">    <span class="keyword">double</span> e = <span class="number">123.1</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; c &lt;&lt;<span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; d &lt;&lt; <span class="string">&#x27; &#x27;</span>&lt;&lt; e; <span class="comment">/*printf不能直接这样，而						是要用续行符&#x27;\&#x27;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>​    ( 2 )  输入cin:：$\textcolor{red}{(属于对象)}$，可连续输入，也会自动识别变量的类型。</p>
@@ -272,10 +274,6 @@
 
 <p>具体用法：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//命名空间的创建</span></span><br><span class="line"><span class="comment">//区分同名变量或函数</span></span><br><span class="line"><span class="keyword">namespace</span> stu</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> stu1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu1&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stu::<span class="built_in">sort</span>();</span><br><span class="line">	stu1::<span class="built_in">sort</span>();<span class="comment">//这样就不会报错了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
 
 
     </div>
