@@ -25,18 +25,18 @@
   <meta name="description" content="输出输入换行（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出,“&lt;&lt;”是输出运算符">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++初步学习">
-<meta property="og:url" content="https://hubu2021.gitee.io/2022/01/16/C-%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="https://hubu2021.gitee.io/2022/01/16/C++%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Super">
 <meta property="og:description" content="输出输入换行（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出,“&lt;&lt;”是输出运算符">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/01/17/cFnhJwBZ1sLjrPO.jpg">
 <meta property="article:published_time" content="2022-01-16T01:54:20.000Z">
-<meta property="article:modified_time" content="2022-01-17T14:06:05.302Z">
+<meta property="article:modified_time" content="2022-01-18T08:25:17.989Z">
 <meta property="article:author" content="渡">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s2.loli.net/2022/01/17/cFnhJwBZ1sLjrPO.jpg">
 
-<link rel="canonical" href="https://hubu2021.gitee.io/2022/01/16/C-%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/">
+<link rel="canonical" href="https://hubu2021.gitee.io/2022/01/16/C++%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hubu2021.gitee.io/2022/01/16/C-%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="https://hubu2021.gitee.io/2022/01/16/C++%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://tse1-mm.cn.bing.net/th/id/OIP-C.VP0E8Yo33976Q5TUwCptyQAAAA?w=170&h=180&c=7&r=0&o=5&dpr=1.56&pid=1.7">
@@ -221,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-17 22:06:05" itemprop="dateModified" datetime="2022-01-17T22:06:05+08:00">2022-01-17</time>
+                <time title="修改时间：2022-01-18 16:25:17" itemprop="dateModified" datetime="2022-01-18T16:25:17+08:00">2022-01-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,14 +246,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>3.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -275,9 +275,22 @@
 <h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><ul>
 <li>功能：用于区分同名变量或函数</li>
 </ul>
-<p>创建格式</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name  <span class="comment">//name不能重复</span></span><br><span class="line">&#123;</span><br><span class="line">    code;<span class="comment">//表示代码片段</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用方法：<code>我我我</code></p>
+<ol>
+<li>创建普通格式</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name  <span class="comment">//name不能重复</span></span><br><span class="line">&#123;</span><br><span class="line">    code;<span class="comment">//表示代码片段,可以定义函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>命名空间可以嵌套</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name1</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> printf = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> rand = <span class="number">2</span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a + b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">namespace</span> name2</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">0</span>; </span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">Sub</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> a - b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>同一个工程中允许存在多个相同名称的命名空间,编译器最后会合成同一个命名空间中。</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>它会与上面的name命名空间合并</strong></p>
+<p>命名空间的调用调用的是数据的地址，因此不能直接调用，可以采用以下几种方法</p>
+</blockquote>
 <p>(1)打开：使用using namespace name;</p>
 <ul>
 <li>using声明语句既可以像代码2-1一样放在main()函数内部（std名称空间中所有的名称只能在main（）函数内使用），也可以放在main（）函数外部，使其获得全局的可见性，这样可以在文件中任何地方使用std名称空间中所有的名称。</li>
@@ -292,6 +305,25 @@
 <ul>
 <li>将0赋给bool型变量时，将被转换为false，而非零值将转换为true。</li>
 </ul>
+<h2 id="struct结构体"><a href="#struct结构体" class="headerlink" title="struct结构体"></a>struct结构体</h2><p><em>在C++中是一个特殊的类</em>  </p>
+<h3 id="C-独有的"><a href="#C-独有的" class="headerlink" title="C++独有的"></a>C++独有的</h3><ol>
+<li>结构体声明变量可以不用struct关键字；</li>
+<li>在结构体中可以加入函数成员；</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">c</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node b;<span class="comment">//结构体声明变量可以不用struct关键字</span></span><br><span class="line">    b.<span class="built_in">c</span>();<span class="comment">//调用结构体中的函数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="而C语言没有以上用法"><a href="#而C语言没有以上用法" class="headerlink" title="而C语言没有以上用法"></a>而C语言没有以上用法</h3><ol>
+<li>虽然C语言不能放入函数成员，但可以放入函数的地址。</li>
+</ol>
+<p>C语言的结构体中不能有函数，但可以通过指针来调用函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">void</span> (*p)();<span class="comment">//指针函数；</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">b</span> =</span> &#123;<span class="number">1</span>,func&#125;;<span class="comment">//声明变量并赋值</span></span><br><span class="line">    b.p();<span class="comment">//通过指针来调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="空间申请与释放-new-与-delete"><a href="#空间申请与释放-new-与-delete" class="headerlink" title="空间申请与释放:new 与 delete"></a>空间申请与释放:new 与 delete</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>;<span class="comment">//申请单个内存空间 new + type</span></span><br><span class="line">    *p = <span class="number">12</span>; <span class="comment">//赋值</span></span><br><span class="line">    <span class="keyword">int</span> *p1 = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(<span class="number">121</span>);<span class="comment">//直接初始化：new + type(value)</span></span><br><span class="line">    cout &lt;&lt; *p &lt;&lt;endl</span><br><span class="line">        &lt;&lt; *p1&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">delete</span> p;   <span class="comment">//内存释放 delete+指针</span></span><br><span class="line">    <span class="keyword">delete</span> p1;  <span class="comment">//内存释放</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//申请数组空间</span></span><br><span class="line">    <span class="keyword">int</span> *p2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];<span class="comment">//C++申请数组空间</span></span><br><span class="line">    <span class="comment">//int *p3 = (int*)malloc(5*sizeof(int));C语言</span></span><br><span class="line">    <span class="comment">//p[0] = 13;</span></span><br><span class="line">    <span class="built_in">memset</span>(p2,<span class="number">0</span>,<span class="number">5</span>*<span class="number">4</span>);<span class="comment">//初始化数组，避免出现“乱码”</span></span><br><span class="line">    cout &lt;&lt; p2[<span class="number">0</span>]&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p2[<span class="number">1</span>]&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p2[<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">delete</span>[] p2; <span class="comment">//释放数组空间：delete[]+指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>释放空间要适配：释放单个空间用delete + 指针，</p>
+<p>​                                释放数组空间用delete[] +指针（要带方括号）</p>
+<p>memset():用于内存初始化的“万能函数”，通常为新申请的内存进行初始化工作函数原型为</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memset</span><span class="params">(<span class="keyword">void</span> *p,<span class="keyword">int</span> c,<span class="keyword">unsigned</span> <span class="keyword">long</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>调用方法：申请空间后：memset(p,0,sizeof(*p));</p>
+</blockquote>
 
     </div>
 
@@ -307,13 +339,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/12/%E8%AE%A9Clion%E6%94%AF%E6%8C%81%E8%BE%93%E5%87%BA%E4%B8%AD%E6%96%87%E4%BB%A3%E7%A0%81/" rel="prev" title="让Clion支持输出中文代码">
-      <i class="fa fa-chevron-left"></i> 让Clion支持输出中文代码
+    <a href="/2022/01/16/C-%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/" rel="prev" title="C++初步学习">
+      <i class="fa fa-chevron-left"></i> C++初步学习
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/16/C++%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/" rel="next" title="C++初步学习">
-      C++初步学习 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -372,7 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E8%BE%93%E5%85%A5%E6%8D%A2%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">输出输入换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANSI-ISO-C-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.</span> <span class="nav-text">ANSI&#x2F;ISO C++关键字</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E8%BE%93%E5%85%A5%E6%8D%A2%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">输出输入换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANSI-ISO-C-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.</span> <span class="nav-text">ANSI&#x2F;ISO C++关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#struct%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">4.</span> <span class="nav-text">struct结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E7%8B%AC%E6%9C%89%E7%9A%84"><span class="nav-number">4.1.</span> <span class="nav-text">C++独有的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%8CC%E8%AF%AD%E8%A8%80%E6%B2%A1%E6%9C%89%E4%BB%A5%E4%B8%8A%E7%94%A8%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">而C语言没有以上用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E7%94%B3%E8%AF%B7%E4%B8%8E%E9%87%8A%E6%94%BE-new-%E4%B8%8E-delete"><span class="nav-number">4.3.</span> <span class="nav-text">空间申请与释放:new 与 delete</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
