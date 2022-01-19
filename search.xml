@@ -5,7 +5,7 @@
     <url>/2022/01/19/Python%E5%88%9D%E6%AD%A5/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/v96YiryDmduPgGO.jpg" alt="wallhaven-8ogod1"></p>
 <span id="more"></span>
-<h1 id="一、输出"><a href="#一、输出" class="headerlink" title="一、输出"></a>一、输出</h1><p>作用：程序输出内容给用户</p>
+<h1 id="一、输出"><a href="#一、输出" class="headerlink" title="一、输出"></a>一、输出</h1><p>作用：输出内容</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello Python&#x27;</span>)</span><br><span class="line"></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(age)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需求：输出“今年我的年龄是18岁”</span></span><br></pre></td></tr></table></figure>
 <h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>所谓的格式化输出即按照一定的格式输出内容。</p>
 <h3 id="1-1-格式化符号"><a href="#1-1-格式化符号" class="headerlink" title="1.1 格式化符号"></a>1.1 格式化符号</h3><div class="table-container">
@@ -72,7 +72,7 @@
 <p>技巧</p>
 </blockquote>
 <ul>
-<li>%06d，表示输出的整数显示位数，不足以0补全，超出当前位数则原样输出</li>
+<li>%03d，表示输出的整数显示位数，不足以0补全，超出当前位数则原样输出</li>
 <li>%.2f，表示小数点后显示的小数位数。</li>
 </ul>
 <h3 id="1-2-体验"><a href="#1-2-体验" class="headerlink" title="1.2 体验"></a>1.2 体验</h3><p>格式化字符串除了%s，还可以写为<code>f&#39;&#123;表达式&#125;&#39;</code></p>
@@ -85,13 +85,13 @@
 <li><code>\t</code>：制表符，一个tab键（4个空格）的距离。</li>
 </ul>
 <h3 id="1-4-结束符"><a href="#1-4-结束符" class="headerlink" title="1.4 结束符"></a>1.4 结束符</h3><blockquote>
-<p>想一想，为什么两个print会换行输出？</p>
+<p>注意</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;输出的内容&#x27;</span>, end=<span class="string">&quot;\n&quot;</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>在Python中，print()， 默认自带<code>end=&quot;\n&quot;</code>这个换行结束符，所以导致每两个<code>print</code>直接会换行展示，用户可以按需求更改结束符。</p>
 </blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<h1 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h1><ul>
 <li>格式化符号<ul>
 <li>%s：格式化输出字符串</li>
 <li>%d：格式化输出整数</li>
@@ -118,7 +118,7 @@
 <li>在Python中，<code>input</code>会把接收到的任意用户输入的数据都当做字符串处理。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的密码：&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的密码是<span class="subst">&#123;password&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
-<h1 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h1><ul>
+<h1 id="重点-1"><a href="#重点-1" class="headerlink" title="重点"></a>重点</h1><ul>
 <li>输入功能<ul>
 <li>input(‘提示文字’)</li>
 </ul>
@@ -172,7 +172,7 @@
 <p>注意：条件2的if也是处于条件1成立执行的代码的缩进关系内部。</p>
 </blockquote>
 <h2 id="6-2-实例：坐公交"><a href="#6-2-实例：坐公交" class="headerlink" title="6.2 实例：坐公交"></a>6.2 实例：坐公交</h2><h3 id="6-2-1-判断是否能上车"><a href="#6-2-1-判断是否能上车" class="headerlink" title="6.2.1 判断是否能上车"></a>6.2.1 判断是否能上车</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">1. 如果有钱，则可以上车</span></span><br><span class="line"><span class="string">    2. 上车后，如果有空座，可以坐下</span></span><br><span class="line"><span class="string">    上车后，如果没有空座，则站着等空座位</span></span><br><span class="line"><span class="string">如果没钱，不能上车</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 假设用 money = 1 表示有钱, money = 0表示没有钱</span></span><br><span class="line">money = <span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> money == <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;土豪，不差钱，顺利上车&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;没钱，不能上车，追着公交车跑&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="6-2-2-判断是否能坐下"><a href="#6-2-2-判断是否能坐下" class="headerlink" title="6.2.2 判断是否能坐下"></a>6.2.2 判断是否能坐下</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">1. 如果有钱，则可以上车</span></span><br><span class="line"><span class="string">    2. 上车后，如果有空座，可以坐下</span></span><br><span class="line"><span class="string">    上车后，如果没有空座，则站着等空座位</span></span><br><span class="line"><span class="string">如果没钱，不能上车</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 假设用 money = 1 表示有钱, money = 0表示没有钱; seat = 1 表示有空座，seat = 0 表示没有空座</span></span><br><span class="line">money = <span class="number">1</span></span><br><span class="line">seat = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> money == <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;土豪，不差钱，顺利上车&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> seat == <span class="number">1</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;有空座，可以坐下&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;没有空座，站等&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;没钱，不能上车，追着公交车跑&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-2-判断是否能坐下"><a href="#6-2-2-判断是否能坐下" class="headerlink" title="6.2.2 判断是否能坐下"></a>6.2.2 判断是否能坐下</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">1. 如果有钱，则可以上车</span></span><br><span class="line"><span class="string">    2. 上车后，如果有空座，可以坐下</span></span><br><span class="line"><span class="string">    上车后，如果没有空座，则站着等空座位</span></span><br><span class="line"><span class="string">如果没钱，不能上车</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 假设用 money = 1 表示有钱, money = 0表示没有钱; seat = 1 表示有空座，seat = 0 表示没有空座</span></span><br><span class="line">money = <span class="number">1</span></span><br><span class="line">seat = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> money == <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;上车&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> seat == <span class="number">1</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;有空座，可以坐下&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;没有空座，站着&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;没钱，不能上车&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <h1 id="七-应用：猜拳游戏"><a href="#七-应用：猜拳游戏" class="headerlink" title="七. 应用：猜拳游戏"></a>七. 应用：猜拳游戏</h1><p>需求分析：</p>
 <ul>
 <li><p>参与游戏的角色</p>
@@ -203,14 +203,9 @@
 </ul>
 <p>随机做法：</p>
 <pre><code>   1. 导出random模块
-   2. random.randint(开始,结束)
+   2. random.randint(开始,结束) &lt;font color=red&gt; 注意：范围包括左右界&lt;/font&gt;
 </code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">提示：0-石头，1-剪刀，2-布</span></span><br><span class="line"><span class="string">1. 出拳</span></span><br><span class="line"><span class="string">玩家输入出拳</span></span><br><span class="line"><span class="string">电脑随机出拳</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2. 判断输赢</span></span><br><span class="line"><span class="string">玩家获胜</span></span><br><span class="line"><span class="string">平局</span></span><br><span class="line"><span class="string">电脑获胜</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入random模块</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算电脑出拳的随机数字</span></span><br><span class="line">computer = random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(computer)</span><br><span class="line"></span><br><span class="line">player = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;请出拳：0-石头，1-剪刀，2-布：&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 玩家胜利 p0:c1 或 p1:c2 或 p2:c0</span></span><br><span class="line"><span class="keyword">if</span> (player == <span class="number">0</span> <span class="keyword">and</span> computer == <span class="number">1</span>) <span class="keyword">or</span> (player == <span class="number">1</span> <span class="keyword">and</span> computer == <span class="number">2</span>) <span class="keyword">or</span> (player == <span class="number">2</span> <span class="keyword">and</span> computer == <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;玩家获胜&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 平局：玩家 == 电脑</span></span><br><span class="line"><span class="keyword">elif</span> player == computer:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;平局&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;电脑获胜&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="八-三目运算符"><a href="#八-三目运算符" class="headerlink" title="八.  三目运算符"></a>八.  三目运算符</h1><p>三目运算符也叫三元运算符。</p>
-<p>语法如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">值<span class="number">1</span> <span class="keyword">if</span> 条件 <span class="keyword">else</span> 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>快速体验：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">c = a <span class="keyword">if</span> a &gt; b <span class="keyword">else</span> b</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
-<h1 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h1><ul>
+<ul>
 <li>if语句语法</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件:</span><br><span class="line">    条件成立执行的代码</span><br></pre></td></tr></table></figure>
@@ -240,50 +235,50 @@
 <thead>
 <tr>
 <th style="text-align:center">运算符</th>
-<th style="text-align:center">描述</th>
-<th>实例</th>
+<th>描述</th>
+<th style="text-align:center">实例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">+</td>
-<td style="text-align:center">加</td>
-<td>1 + 1 输出结果为 2</td>
+<td>加</td>
+<td style="text-align:center">1 + 1 输出结果为 2</td>
 </tr>
 <tr>
 <td style="text-align:center">-</td>
-<td style="text-align:center">减</td>
-<td>1-1 输出结果为 0</td>
+<td>减</td>
+<td style="text-align:center">1-1 输出结果为 0</td>
 </tr>
 <tr>
 <td style="text-align:center">*</td>
-<td style="text-align:center">乘</td>
-<td>2 * 2 输出结果为 4</td>
+<td>乘</td>
+<td style="text-align:center">2 * 2 输出结果为 4</td>
 </tr>
 <tr>
 <td style="text-align:center">/</td>
-<td style="text-align:center">除</td>
-<td>10 / 2 输出结果为 5</td>
+<td>除</td>
+<td style="text-align:center">10 / 2 输出结果为 5</td>
 </tr>
 <tr>
 <td style="text-align:center">//</td>
-<td style="text-align:center">整除</td>
-<td>10 // 4 输出结果为2</td>
+<td>整除</td>
+<td style="text-align:center">10 // 4 输出结果为2</td>
 </tr>
 <tr>
 <td style="text-align:center">%</td>
-<td style="text-align:center">取余</td>
-<td>10 % 4 输出结果为 2</td>
+<td>取余</td>
+<td style="text-align:center">10 % 4 输出结果为 2</td>
 </tr>
 <tr>
 <td style="text-align:center">**</td>
-<td style="text-align:center">指数</td>
-<td>2 <em>* 4 输出结果为 16，即 2 </em> 2 <em> 2 </em> 2</td>
+<td>指数</td>
+<td style="text-align:center">2 <em>* 4 输出结果为 16，即 2 </em> 2 <em> 2 </em> 2</td>
 </tr>
 <tr>
 <td style="text-align:center">()</td>
-<td style="text-align:center">小括号</td>
-<td>小括号用来提高运算优先级，即 (1 + 2) * 3 输出结果为 9</td>
+<td>小括号</td>
+<td style="text-align:center">小括号用来提高运算优先级，即 (1 + 2) * 3 输出结果为 9</td>
 </tr>
 </tbody>
 </table>
@@ -330,44 +325,44 @@
 <tr>
 <th>运算符</th>
 <th>描述</th>
-<th>实例</th>
+<th style="text-align:left">实例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>+=</td>
 <td>加法赋值运算符</td>
-<td>c += a 等价于 c = c + a</td>
+<td style="text-align:left">c += a 等价于 c = c + a</td>
 </tr>
 <tr>
 <td>-=</td>
 <td>减法赋值运算符</td>
-<td>c -= a 等价于 c = c- a</td>
+<td style="text-align:left">c -= a 等价于 c = c- a</td>
 </tr>
 <tr>
 <td>*=</td>
 <td>乘法赋值运算符</td>
-<td>c <em>= a 等价于 c = c </em> a</td>
+<td style="text-align:left">c <em>= a 等价于 c = c </em> a</td>
 </tr>
 <tr>
 <td>/=</td>
 <td>除法赋值运算符</td>
-<td>c /= a 等价于 c = c / a</td>
+<td style="text-align:left">c /= a 等价于 c = c / a</td>
 </tr>
 <tr>
 <td>//=</td>
 <td>整除赋值运算符</td>
-<td>c //= a 等价于 c = c // a</td>
+<td style="text-align:left">c //= a 等价于 c = c // a</td>
 </tr>
 <tr>
 <td>%=</td>
 <td>取余赋值运算符</td>
-<td>c %= a 等价于 c = c % a</td>
+<td style="text-align:left">c %= a 等价于 c = c % a</td>
 </tr>
 <tr>
 <td>**=</td>
 <td>幂赋值运算符</td>
-<td>c <strong> = a 等价于 c = c </strong> a</td>
+<td style="text-align:left">c <strong> = a 等价于 c = c </strong> a</td>
 </tr>
 </tbody>
 </table>
@@ -453,7 +448,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">c = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>((a &lt; b) <span class="keyword">and</span> (b &lt; c))  <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>((a &gt; b) <span class="keyword">and</span> (b &lt; c))  <span class="comment"># False</span></span><br><span class="line"><span class="built_in">print</span>((a &gt; b) <span class="keyword">or</span> (b &lt; c))   <span class="comment"># True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">not</span> (a &gt; b))          <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
 <h3 id="5-1-拓展"><a href="#5-1-拓展" class="headerlink" title="5.1 拓展"></a>5.1 拓展</h3><p>数字之间的逻辑运算</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line">b = <span class="number">1</span></span><br><span class="line">c = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># and运算符，只要有一个值为0，则结果为0，否则结果为最后一个非0数字</span></span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">and</span> b)  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(b <span class="keyword">and</span> a)  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">and</span> c)  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(c <span class="keyword">and</span> a)  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(b <span class="keyword">and</span> c)  <span class="comment"># 2</span></span><br><span class="line"><span class="built_in">print</span>(c <span class="keyword">and</span> b)  <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># or运算符，只有所有值为0结果才为0，否则结果为第一个非0数字</span></span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">or</span> b)  <span class="comment"># 1</span></span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">or</span> c)  <span class="comment"># 2</span></span><br><span class="line"><span class="built_in">print</span>(b <span class="keyword">or</span> c)  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
-<h1 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h1><ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
 <li>算数运算的优先级<ul>
 <li>混合运算优先级顺序：<code>()</code>高于 <code>**</code> 高于 <code>*</code> <code>/</code> <code>//</code> <code>%</code> 高于 <code>+</code> <code>-</code></li>
 </ul>
@@ -499,7 +494,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">n = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> n &lt; <span class="number">5</span>:</span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; <span class="number">5</span>:     <span class="comment">#把5换成你，就是打印三角形</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;*&quot;</span>,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        j+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n &lt; <span class="number">4</span>:    <span class="comment"># 控制最后一行不打印回车</span></span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    n+=<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h5 id="九九乘法表"><a href="#九九乘法表" class="headerlink" title="九九乘法表"></a>九九乘法表</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">9</span>:</span><br><span class="line">    j = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt;= i:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;j&#125;</span>*<span class="subst">&#123;i&#125;</span>=<span class="subst">&#123;i*j&#125;</span>&#x27;</span>,end=<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> i &lt; <span class="number">9</span>: <span class="comment"># 控制最后一行不打印回车</span></span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h5 id="while…else…"><a href="#while…else…" class="headerlink" title="while…else…"></a>while…else…</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">	条件成立执行打得的代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	循环正常结束后执行的代码(如果<span class="keyword">break</span>终止循环，则不执行该部分代码)</span><br></pre></td></tr></table></figure>
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 范围</span><br></pre></td></tr></table></figure>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 范围</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>python</category>
@@ -568,25 +563,21 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memset</span><span class="params">(<span class="keyword">void</span> *p,<span class="keyword">int</span> c,<span class="keyword">unsigned</span> <span class="keyword">long</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>调用方法：申请空间后：memset(p,0,sizeof(*p));</p>
 </blockquote>
+<h2 id="引用变量"><a href="#引用变量" class="headerlink" title="引用变量"></a>引用变量</h2><ol>
+<li>定义就要初始化</li>
+<li>不能再指向其他的了</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//变量起别名</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">12</span>;</span><br><span class="line">    <span class="keyword">int</span> &amp;c = a; <span class="comment">//声明变量a的引用 c,c是a的别名</span></span><br><span class="line">    <span class="keyword">int</span> &amp;d = a;<span class="comment">//声明就要初始化</span></span><br><span class="line">    <span class="keyword">int</span> &amp;e = c;</span><br><span class="line">    <span class="comment">//观察输出的地址</span></span><br><span class="line">    cout &lt;&lt; &amp;a &lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; &amp;c &lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; &amp;e &lt;&lt;endl;</span><br><span class="line">    c = <span class="number">100</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;endl;  <span class="comment">//输出结果是100、</span></span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">14</span>;</span><br><span class="line">    d = f;  <span class="comment">//是把f的值赋给d,并不是重新引用；</span></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;<span class="comment">//输出结果是14</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果：$\colorbox{yellow}{输出的地址完全一样，都是同一个量}$<img src="https://s2.loli.net/2022/01/19/Z1qScyKJTudH7vC.png" alt="image-20220119210839904"></p>
 ]]></content>
       <categories>
         <category>C++</category>
       </categories>
   </entry>
   <entry>
-    <title>打印年历表</title>
-    <url>/2021/12/21/%E6%89%93%E5%8D%B0%E5%B9%B4%E5%8E%86%E8%A1%A8/</url>
-    <content><![CDATA[<h1 id="打印年历表"><a href="#打印年历表" class="headerlink" title="打印年历表"></a>打印年历表</h1><span id="more"></span>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">int</span> year;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;请输入一个年份，打印该年年历：&quot;</span>);</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;year);</span><br><span class="line"></span><br><span class="line">   printCal(year);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>((year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>)||year%<span class="number">400</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (((year<span class="number">-1</span>)*<span class="number">365</span>+(year<span class="number">-1</span>)/<span class="number">4</span>-(year<span class="number">-1</span>)/<span class="number">100</span>+(year<span class="number">-1</span>)/<span class="number">400</span>)+<span class="number">1</span>)%<span class="number">7</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(month)</span><br><span class="line">	&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">12</span>:<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">11</span>:<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">2</span>:<span class="keyword">if</span>(isLeapYear(year))<span class="keyword">return</span> <span class="number">29</span>;</span><br><span class="line">		  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">28</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printMonth</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fday,days,i,j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;==========%d月=========\n&quot;</span>,month);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; 日 一 二 三 四 五 六\n&quot;</span>);</span><br><span class="line">    fday=firstDay(year);</span><br><span class="line">    days=monthDays(year,month);</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=fday;j++)<span class="built_in">printf</span>(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=days;i++)</span><br><span class="line">	&#123;  </span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,i);</span><br><span class="line">	  j++;</span><br><span class="line">	  <span class="keyword">if</span>(j%<span class="number">7</span>==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;========%d年年历=======\n&quot;</span>,year);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">12</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printMonth(year,i);</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-  </entry>
-  <entry>
     <title>定积分</title>
     <url>/2021/12/15/%E5%AE%9A%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<h1 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h1><p><img src="https://s2.loli.net/2022/01/19/CTynqD3NiZe5uS2.jpg" alt="wallhaven-72rd8e"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/CTynqD3NiZe5uS2.jpg" alt="wallhaven-72rd8e"></p>
 <span id="more"></span>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line">	<span class="comment">/*f(x)为函数举例，即被积函数*/</span></span><br><span class="line">	<span class="keyword">int</span> i,n;</span><br><span class="line">	<span class="comment">/*n为区间等分的个数，应尽可能大*/</span></span><br><span class="line">	<span class="keyword">double</span> a,b,h,s;</span><br><span class="line">	<span class="comment">/*a为积分下限，b为积分上限，h为步长*/</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分下限 a:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分上限 b:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;区间等分个数 n :\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	h=(b-a)/n;  <span class="comment">/*步长的计算*/</span></span><br><span class="line">	s=<span class="number">0.5</span>*(f(a)+f(a+h))*h;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;函数 f(x) 的积分值为 s=%10.6f\n&quot;</span>,s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*以下为被积函数的定义，即函数举例*/</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	y=x*x<span class="number">-3</span>*x+<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">return</span> (y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="适用于所有的函数用来求定积分"><a href="#适用于所有的函数用来求定积分" class="headerlink" title="适用于所有的函数用来求定积分"></a>适用于所有的函数用来求定积分</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f1</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f2</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f3</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Intergral</span><span class="params">(<span class="keyword">float</span> (*f1)(<span class="keyword">float</span>),<span class="keyword">float</span> a,<span class="keyword">float</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> x1=Intergral(f1,<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">float</span> x2=Intergral(f2,<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">float</span> x3=Intergral(f3,<span class="number">0</span>,<span class="number">3.14</span>/<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;y1的定积分为%f,\ny2的定积分为%f,\ny2的定积分为%f&quot;</span>,x1,x2,x3);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Intergral</span><span class="params">(<span class="keyword">float</span> (*f)(<span class="keyword">float</span>),<span class="keyword">float</span> a,<span class="keyword">float</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> n=<span class="number">1000</span>,i;</span><br><span class="line">	<span class="keyword">float</span> h;</span><br><span class="line">	h=(b-a)/n;</span><br><span class="line">	<span class="keyword">float</span> sum = <span class="built_in">fabs</span>(<span class="number">0.5</span>*(f(a)+f(a+h))*h);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum = sum+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f1</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>+x*x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f2</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>/(<span class="number">1</span>+x*x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f3</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">cos</span>(x*x+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -598,6 +589,16 @@
         <tag>导航</tag>
         <tag>分享</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>打印年历表</title>
+    <url>/2021/12/21/%E6%89%93%E5%8D%B0%E5%B9%B4%E5%8E%86%E8%A1%A8/</url>
+    <content><![CDATA[<h1 id="打印年历表"><a href="#打印年历表" class="headerlink" title="打印年历表"></a>打印年历表</h1><span id="more"></span>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">int</span> year;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;请输入一个年份，打印该年年历：&quot;</span>);</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;year);</span><br><span class="line"></span><br><span class="line">   printCal(year);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>((year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>)||year%<span class="number">400</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (((year<span class="number">-1</span>)*<span class="number">365</span>+(year<span class="number">-1</span>)/<span class="number">4</span>-(year<span class="number">-1</span>)/<span class="number">100</span>+(year<span class="number">-1</span>)/<span class="number">400</span>)+<span class="number">1</span>)%<span class="number">7</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(month)</span><br><span class="line">	&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">12</span>:<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">11</span>:<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">2</span>:<span class="keyword">if</span>(isLeapYear(year))<span class="keyword">return</span> <span class="number">29</span>;</span><br><span class="line">		  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">28</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printMonth</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fday,days,i,j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;==========%d月=========\n&quot;</span>,month);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; 日 一 二 三 四 五 六\n&quot;</span>);</span><br><span class="line">    fday=firstDay(year);</span><br><span class="line">    days=monthDays(year,month);</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=fday;j++)<span class="built_in">printf</span>(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=days;i++)</span><br><span class="line">	&#123;  </span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,i);</span><br><span class="line">	  j++;</span><br><span class="line">	  <span class="keyword">if</span>(j%<span class="number">7</span>==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;========%d年年历=======\n&quot;</span>,year);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">12</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printMonth(year,i);</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
   </entry>
   <entry>
     <title>让Clion支持输出中文代码</title>
@@ -749,6 +750,9 @@
 <blockquote>
 <p>我的内容是引用(用一个&gt;)</p>
 </blockquote>
+<font color=red font face="楷体" size=5>字体的颜色改变以及字体的选择</font>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">font</span> <span class="attr">face</span>=<span class="string">&quot;楷体&quot;</span> <span class="attr">size</span>=<span class="string">5</span>&gt;</span>输入的内容<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>这个是换行</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>C语言</category>
