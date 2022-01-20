@@ -529,6 +529,156 @@
       </categories>
   </entry>
   <entry>
+    <title>Python的字符串类型</title>
+    <url>/2022/01/20/Python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>例如：<font color=blue>(既可以用单引号，也可以用双引号,三引号)</font></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">b = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line">c =<span class="string">&#x27;&#x27;&#x27;aaaaaa&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：控制台显示结果为<code>&lt;class &#39;str&#39;&gt;</code>， 即数据类型为str(字符串)。</p>
+</blockquote>
+<h2 id="1-1-字符串特征"><a href="#1-1-字符串特征" class="headerlink" title="1.1 字符串特征"></a>1.1 字符串特征</h2><ul>
+<li>一对引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name1 = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">name2 = <span class="string">&quot;TOM&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>三引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name3 = <span class="string">&#x27;&#x27;&#x27; Tom &#x27;&#x27;&#x27;</span></span><br><span class="line">name4 = <span class="string">&quot;&quot;&quot; Rose &quot;&quot;&quot;</span></span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27; I am Tom, </span></span><br><span class="line"><span class="string">        nice to meet you! &#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">&quot;&quot;&quot; I am Rose, </span></span><br><span class="line"><span class="string">        nice to meet you! &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：<font color=blue>三引号形式的字符串支持换行。</font></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = <span class="string">&quot;I&#x27;m Tom&quot;</span></span><br><span class="line">d = <span class="string">&#x27;I\&#x27;m Tom&#x27;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要打印<code>I\&#39;m Tom</code>，要用转义字符     <font color=blue>\ </font></p>
+</blockquote>
+<h2 id="1-2-字符串输出"><a href="#1-2-字符串输出" class="headerlink" title="1.2 字符串输出"></a>1.2 字符串输出</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line">name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-字符串输入"><a href="#1-3-字符串输入" class="headerlink" title="1.3 字符串输入"></a>1.3 字符串输入</h2><p>在Python中，使用<code>input()</code>接收用户输入。</p>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的名字：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br><span class="line"></span><br><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的密码：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的密码是<span class="subst">&#123;password&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>输出结果</p>
+<p><img src="https://s2.loli.net/2022/01/20/oqZkRzCD6xSYWaG.png" alt="image-20220120101330015"></p>
+<font color=red>前面提到过，input()输入的均为字符串类型</font>
+
+</li>
+</ul>
+<h2 id="下标：即编号"><a href="#下标：即编号" class="headerlink" title="下标：即编号"></a>下标：即编号</h2><h3 id="2-1-使用下标"><a href="#2-1-使用下标" class="headerlink" title="2.1 使用下标"></a>2.1 使用下标</h3><blockquote>
+ <font color=red>从0开始</font>
+
+</blockquote>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;asdfgh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>]) <span class="comment"># s</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>]) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>]) <span class="comment"># d</span></span><br></pre></td></tr></table></figure>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
+<h3 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">序列[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<pre><code>   1. &lt;font color=red&gt;不包含结束位置下标对应的数据&lt;/font&gt;， 正负整数均可；
+   2. 步长是选取间隔，正负整数均可，默认步长为1。
+</code></pre><h3 id="3-2-体验"><a href="#3-2-体验" class="headerlink" title="3.2 体验"></a>3.2 体验</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef,负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用操作方法"><a href="#常用操作方法" class="headerlink" title="常用操作方法"></a>常用操作方法</h2><p>字符串的常用操作方法有<font color=orange>查找、修改和判断</font>三大类。</p>
+<h3 id="4-1-查找"><a href="#4-1-查找" class="headerlink" title="4.1 查找"></a>4.1 查找</h3><p>所谓字符串查找方法即是查找子串在字符串中的位置或出现的次数。</p>
+<ul>
+<li>find()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则返回-1。</font></li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.find(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># -1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>index()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则报异常</font>。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.index(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>rfind()： 和find()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
+<li>rindex()：和index()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
+<li>count()：返回某个子串在字符串中出现的次数</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.count(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>, <span class="number">0</span>, <span class="number">20</span>))  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-修改"><a href="#4-2-修改" class="headerlink" title="4.2 修改"></a>4.2 修改</h3><p>所谓修改字符串，指的就是通过函数的形式修改字符串中的数据。</p>
+<ul>
+<li>replace()：替换<font color=blue>(原数据不会被修改，有返回值)</font></li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.replace(旧子串, 新子串, 替换次数)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：替换次数如果查出子串出现次数，则替换次数为该子串出现次数。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Rose and Tom and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>, <span class="number">10</span>))</span><br><span class="line"><span class="comment"># 结果：hello world and Rose and Tom and Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：数据按照是否能直接修改分为<font color=redg>可变类型</font>和<font color=redg>不可变类型</font>两种。字符串类型的数据修改的时候不能改变原有字符串，属于不能直接修改数据的类型即是不可变类型。</p>
+</blockquote>
+<ul>
+<li>split()：按照指定字符分割字符串。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.split(分割字符, num)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：num表示的是分割字符出现的次数，即将来返回数据个数为num+1个。<font color=bule>分割字符丢失</font></p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima &#x27;, &#x27; Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and&#x27;, &#x27;itcast&#x27;, &#x27;and&#x27;, &#x27;itheima&#x27;, &#x27;and&#x27;, &#x27;Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and itcast and itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果分割字符是原有字符串中的子串，分割后则丢失该子串。</p>
+</blockquote>
+<ul>
+<li>join()：用一个字符或子串合并字符串，即是将多个字符串合并为一个新的字符串。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">用于连接字符或子串.join(多字符串组成的序列)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;chuan&#x27;</span>, <span class="string">&#x27;zhi&#x27;</span>, <span class="string">&#x27;bo&#x27;</span>, <span class="string">&#x27;ke&#x27;</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>)</span><br><span class="line"><span class="comment"># 结果：chuan_zhi_bo_ke</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;_&#x27;</span>.join(list1))</span><br><span class="line"><span class="comment"># 结果：aa...b...cc...ddd</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;...&#x27;</span>.join(t1))</span><br></pre></td></tr></table></figure>
+<p>&lt;大小写转换函数不重要，了解即可，省略&gt;</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C++初步学习</title>
     <url>/2022/01/16/C++%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/oe36hVriAPRGucD.jpg" alt="wallhaven-pkw6y3"></p>
