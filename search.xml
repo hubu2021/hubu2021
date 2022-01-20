@@ -531,7 +531,8 @@
   <entry>
     <title>Python的字符串类型</title>
     <url>/2022/01/20/Python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>例如：<font color=blue>(既可以用单引号，也可以用双引号,三引号)</font></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/5og9ktiUXYLu8j2.jpg" alt="wallhaven-g75r7d"></p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>例如：<font color=blue>(既可以用单引号，也可以用双引号,三引号)</font></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">b = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line">c =<span class="string">&#x27;&#x27;&#x27;aaaaaa&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：控制台显示结果为<code>&lt;class &#39;str&#39;&gt;</code>， 即数据类型为str(字符串)。</p>
