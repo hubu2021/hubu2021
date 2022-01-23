@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++初步学习</title>
+    <url>/2022/01/16/C++%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/oe36hVriAPRGucD.jpg" alt="wallhaven-pkw6y3"></p>
+<span id="more"></span>
+<h2 id="输出输入换行"><a href="#输出输入换行" class="headerlink" title="输出输入换行"></a>输出输入换行</h2><p>（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出,“&lt;&lt;”是<code>输出运算符</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">char</span> c = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    <span class="keyword">float</span> d = <span class="number">123.12f</span>;</span><br><span class="line">    <span class="keyword">double</span> e = <span class="number">123.1</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; c &lt;&lt;<span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; d &lt;&lt; <span class="string">&#x27; &#x27;</span>&lt;&lt; e; <span class="comment">/*printf不能直接这样，而						是要用续行符&#x27;\&#x27;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    ( 2 )  输入cin:：$\textcolor{red}{(属于对象)}$，可连续输入，也会自动识别变量的类型。“&gt;&gt;”是输入运算符。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a;</span><br><span class="line">    <span class="keyword">float</span> b;</span><br><span class="line">    <span class="keyword">int</span> c;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;请输入\n&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;<span class="string">&#x27;\n&#x27;</span>&lt;&lt; b &lt;&lt; <span class="string">&#x27;\n&#x27;</span> &lt;&lt; c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>​    ( 3 ) 换行endl：换行，并且$\textcolor{red}{清空缓冲区}$；当然也可以使用C语言中的’\n’$\textcolor{red}{(\n相当于一个字符，在C语言中有学)}$,但该字符没有清空缓冲区的作用。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;hello world \n&quot;</span>;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;hello C3&quot;</span>&lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;asdf&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><ul>
+<li>功能：用于区分同名变量或函数</li>
+</ul>
+<ol>
+<li>创建普通格式</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name  <span class="comment">//name不能重复</span></span><br><span class="line">&#123;</span><br><span class="line">    code;<span class="comment">//表示代码片段,可以定义函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>命名空间可以嵌套</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name1</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> printf = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> rand = <span class="number">2</span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a + b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">namespace</span> name2</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">0</span>; </span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">Sub</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> a - b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>同一个工程中允许存在多个相同名称的命名空间,编译器最后会合成同一个命名空间中。</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>它会与上面的name命名空间合并</strong></p>
+<p>命名空间的调用调用的是数据的地址，因此不能直接调用，可以采用以下几种方法</p>
+</blockquote>
+<p>(1)打开：使用using namespace name;</p>
+<ul>
+<li>using声明语句既可以像代码2-1一样放在main()函数内部（std名称空间中所有的名称只能在main（）函数内使用），也可以放在main（）函数外部，使其获得全局的可见性，这样可以在文件中任何地方使用std名称空间中所有的名称。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//命名空间的创建</span></span><br><span class="line"><span class="comment">//区分同名变量或函数</span></span><br><span class="line"><span class="keyword">namespace</span> stu</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> stu1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu1&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打开函数：using namespace name;可以放在main函数外，也可以放在main函数内，但不能在创建命名空间和main函数后</span></span><br><span class="line"><span class="keyword">using</span> namepace stu;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//变量或函数的调用</span></span><br><span class="line">    <span class="built_in">sort</span>();</span><br><span class="line">    <span class="comment">/*using namespace stu;</span></span><br><span class="line"><span class="comment">    sort();</span></span><br><span class="line"><span class="comment">    using namespace stu1;</span></span><br><span class="line"><span class="comment">    sort();*/</span> <span class="comment">//这样会报错：sort声明是模糊的；解决方法见方法二</span></span><br><span class="line">  	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(2) 使用作用域运算符“ $\textcolor{red}{::}$” ：格式</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">name::变量名/函数名;</span><br></pre></td></tr></table></figure>
+<p>具体用法：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//命名空间的创建</span></span><br><span class="line"><span class="comment">//区分同名变量或函数</span></span><br><span class="line"><span class="keyword">namespace</span> stu</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> stu1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu1&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stu::<span class="built_in">sort</span>();</span><br><span class="line">	stu1::<span class="built_in">sort</span>();<span class="comment">//这样就不会报错了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ANSI-ISO-C-关键字"><a href="#ANSI-ISO-C-关键字" class="headerlink" title="ANSI/ISO C++关键字"></a>ANSI/ISO C++关键字</h2><p><img src="https://s2.loli.net/2022/01/17/cFnhJwBZ1sLjrPO.jpg" alt="img"></p>
+<p><strong>关键字是一种特殊的标识符，关键字具有特定的含义，不能再对其定义。</strong></p>
+<ul>
+<li>将0赋给bool型变量时，将被转换为false，而非零值将转换为true。</li>
+</ul>
+<h2 id="struct结构体"><a href="#struct结构体" class="headerlink" title="struct结构体"></a>struct结构体</h2><p><em>在C++中是一个特殊的类</em>  </p>
+<h3 id="C-独有的"><a href="#C-独有的" class="headerlink" title="C++独有的"></a>C++独有的</h3><ol>
+<li>结构体声明变量可以不用struct关键字；</li>
+<li>在结构体中可以加入函数成员；</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">c</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node b;<span class="comment">//结构体声明变量可以不用struct关键字</span></span><br><span class="line">    b.<span class="built_in">c</span>();<span class="comment">//调用结构体中的函数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="而C语言没有以上用法"><a href="#而C语言没有以上用法" class="headerlink" title="而C语言没有以上用法"></a>而C语言没有以上用法</h3><ol>
+<li>虽然C语言不能放入函数成员，但可以放入函数的地址。</li>
+</ol>
+<p>C语言的结构体中不能有函数，但可以通过指针来调用函数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">void</span> (*p)();<span class="comment">//指针函数；</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">b</span> =</span> &#123;<span class="number">1</span>,func&#125;;<span class="comment">//声明变量并赋值</span></span><br><span class="line">    b.p();<span class="comment">//通过指针来调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="空间申请与释放-new-与-delete"><a href="#空间申请与释放-new-与-delete" class="headerlink" title="空间申请与释放:new 与 delete"></a>空间申请与释放:new 与 delete</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>;<span class="comment">//申请单个内存空间 new + type</span></span><br><span class="line">    *p = <span class="number">12</span>; <span class="comment">//赋值</span></span><br><span class="line">    <span class="keyword">int</span> *p1 = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(<span class="number">121</span>);<span class="comment">//直接初始化：new + type(value)</span></span><br><span class="line">    cout &lt;&lt; *p &lt;&lt;endl</span><br><span class="line">        &lt;&lt; *p1&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">delete</span> p;   <span class="comment">//内存释放 delete+指针</span></span><br><span class="line">    <span class="keyword">delete</span> p1;  <span class="comment">//内存释放</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//申请数组空间</span></span><br><span class="line">    <span class="keyword">int</span> *p2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];<span class="comment">//C++申请数组空间</span></span><br><span class="line">    <span class="comment">//int *p3 = (int*)malloc(5*sizeof(int));C语言</span></span><br><span class="line">    <span class="comment">//p[0] = 13;</span></span><br><span class="line">    <span class="built_in">memset</span>(p2,<span class="number">0</span>,<span class="number">5</span>*<span class="number">4</span>);<span class="comment">//初始化数组，避免出现“乱码”</span></span><br><span class="line">    cout &lt;&lt; p2[<span class="number">0</span>]&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p2[<span class="number">1</span>]&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p2[<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">delete</span>[] p2; <span class="comment">//释放数组空间：delete[]+指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>释放空间要适配：释放单个空间用delete + 指针，</p>
+<p>​                                释放数组空间用delete[] +指针（要带方括号）</p>
+<p>memset():用于内存初始化的“万能函数”，通常为新申请的内存进行初始化工作函数原型为</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memset</span><span class="params">(<span class="keyword">void</span> *p,<span class="keyword">int</span> c,<span class="keyword">unsigned</span> <span class="keyword">long</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>调用方法：申请空间后：memset(p,0,sizeof(*p));</p>
+</blockquote>
+<h2 id="引用变量"><a href="#引用变量" class="headerlink" title="引用变量"></a>引用变量</h2><ol>
+<li>定义就要初始化</li>
+<li>不能再指向其他的了</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//变量起别名</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">12</span>;</span><br><span class="line">    <span class="keyword">int</span> &amp;c = a; <span class="comment">//声明变量a的引用 c,c是a的别名</span></span><br><span class="line">    <span class="keyword">int</span> &amp;d = a;<span class="comment">//声明就要初始化</span></span><br><span class="line">    <span class="keyword">int</span> &amp;e = c;</span><br><span class="line">    <span class="comment">//观察输出的地址</span></span><br><span class="line">    cout &lt;&lt; &amp;a &lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; &amp;c &lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; &amp;e &lt;&lt;endl;</span><br><span class="line">    c = <span class="number">100</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;endl;  <span class="comment">//输出结果是100、</span></span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">14</span>;</span><br><span class="line">    d = f;  <span class="comment">//是把f的值赋给d,并不是重新引用；</span></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;<span class="comment">//输出结果是14</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果：$\colorbox{yellow}{输出的地址完全一样，都是同一个量}$<img src="https://s2.loli.net/2022/01/19/Z1qScyKJTudH7vC.png" alt="image-20220119210839904"></p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python之其他数据类型（二）</title>
     <url>/2022/01/21/Python%E4%B9%8B%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/21/sofyAeQK9p6VTvc.jpg" alt=""></p>
@@ -372,6 +446,609 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> <span class="keyword">in</span> s1)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> <span class="keyword">not</span> <span class="keyword">in</span> s1)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python之文件操作</title>
+    <url>/2022/01/23/Python%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="文件的基本操作"><a href="#文件的基本操作" class="headerlink" title="文件的基本操作"></a>文件的基本操作</h1><h2 id="2-1-文件操作步骤"><a href="#2-1-文件操作步骤" class="headerlink" title="2.1 文件操作步骤"></a>2.1 文件操作步骤</h2><ol>
+<li>打开文件</li>
+<li>读写等操作</li>
+<li>关闭文件</li>
+</ol>
+<blockquote>
+<p>注意：可以只打开和关闭文件，不进行任何读写操作。</p>
+</blockquote>
+<h3 id="2-1-1-打开"><a href="#2-1-1-打开" class="headerlink" title="2.1.1  打开"></a>2.1.1  打开</h3><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">open</span>(name, mode)</span><br></pre></td></tr></table></figure>
+<p>name：是要打开的目标文件名的字符串(可以包含文件所在的具体路径)。</p>
+<p>mode：设置打开文件的模式(访问模式)：只读、写入、追加等。</p>
+<h4 id="2-1-1-1-打开文件模式"><a href="#2-1-1-1-打开文件模式" class="headerlink" title="2.1.1.1 打开文件模式"></a>2.1.1.1 打开文件模式</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td>以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td style="text-align:center">rb</td>
+<td>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td style="text-align:center">r+</td>
+<td>打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td style="text-align:center">rb+</td>
+<td>以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td style="text-align:center">wb</td>
+<td>以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td style="text-align:center">w+</td>
+<td>打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td style="text-align:center">wb+</td>
+<td>以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td style="text-align:center">ab</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td style="text-align:center">a+</td>
+<td>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td style="text-align:center">ab+</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="2-1-1-2-快速体验"><a href="#2-1-1-2-快速体验" class="headerlink" title="2.1.1.2 快速体验"></a>2.1.1.2 快速体验</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：此时的<code>f</code>是<code>open</code>函数的文件对象。</p>
+</blockquote>
+<h3 id="2-1-2-文件对象方法"><a href="#2-1-2-文件对象方法" class="headerlink" title="2.1.2 文件对象方法"></a>2.1.2 文件对象方法</h3><h5 id="2-1-2-1-写"><a href="#2-1-2-1-写" class="headerlink" title="2.1.2.1 写"></a>2.1.2.1 写</h5><ul>
+<li>语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">对象对象.write(<span class="string">&#x27;内容&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>体验</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 打开文件</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.文件写入</span></span><br><span class="line">f.write(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 关闭文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><code>w</code>和<code>a</code>模式：如果文件不存在则创建该文件；如果文件存在，<code>w</code>模式先清空再写入，<code>a</code>模式直接末尾追加。</li>
+<li><code>r</code>模式：如果文件不存在则报错。</li>
+</ol>
+</blockquote>
+<h5 id="2-1-2-2-读"><a href="#2-1-2-2-读" class="headerlink" title="2.1.2.2 读"></a>2.1.2.2 读</h5><ul>
+<li>read()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.read(num)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>num表示要从文件中读取的数据的长度（单位是字节），如果没有传入num，那么就表示读取文件中所有的数据。<font color=red>如果所读文件有换行，则换行符也要占一个字节</font></p>
+</blockquote>
+<ul>
+<li>readlines()</li>
+</ul>
+<p>readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line">content = f.readlines()</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;hello world\n&#x27;, &#x27;abcdefg\n&#x27;, &#x27;aaa\n&#x27;, &#x27;bbb\n&#x27;, &#x27;ccc&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>readline()</li>
+</ul>
+<p>readline()<font color=red>一次读取一行内容</font>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;第一行：<span class="subst">&#123;content&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;第二行：<span class="subst">&#123;content&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-2-3-seek"><a href="#2-1-2-3-seek" class="headerlink" title="2.1.2.3 seek()"></a>2.1.2.3 seek()</h5><p>作用：用来移动文件指针。</p>
+<p>语法如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.seek(偏移量, 起始位置)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>起始位置：</p>
+<ul>
+<li>0：文件开头</li>
+<li>1：当前位置</li>
+<li>2：文件结尾</li>
+</ul>
+</blockquote>
+<h3 id="2-1-3-关闭"><a href="#2-1-3-关闭" class="headerlink" title="2.1.3 关闭"></a>2.1.3 关闭</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">文件对象.close()</span><br></pre></td></tr></table></figure>
+<h1 id="三-文件备份"><a href="#三-文件备份" class="headerlink" title="三. 文件备份"></a>三. 文件备份</h1><p>需求：用户输入当前目录下任意文件名，程序完成对该文件的备份功能(备份文件名为xx[备份]后缀，例如：test[备份].txt)。</p>
+<h2 id="3-1-步骤"><a href="#3-1-步骤" class="headerlink" title="3.1 步骤"></a>3.1 步骤</h2><ol>
+<li>接收用户输入的文件名</li>
+<li>规划备份文件名</li>
+<li>备份文件写入数据</li>
+</ol>
+<h2 id="3-2-代码实现"><a href="#3-2-代码实现" class="headerlink" title="3.2 代码实现"></a>3.2 代码实现</h2><ol>
+<li>接收用户输入目标文件名</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">old_name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您要备份的文件名：&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>规划备份文件名</p>
+<p>2.1 提取目标文件后缀</p>
+<p>2.2 组织备份的文件名，xx[备份]后缀</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 2.1 提取文件后缀点的下标</span></span><br><span class="line">index = old_name.rfind(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(index)  # 后缀中.的下标</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(old_name[:ind``</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>备份文件写入数据</p>
+<p>3.1 打开源文件 和 备份文件</p>
+<p>3.2 将源文件数据写入备份文件</p>
+<p>3.3 关闭文件</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 3.1 打开文件</span></span><br><span class="line">old_f = <span class="built_in">open</span>(old_name, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">new_f = <span class="built_in">open</span>(new_name, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 将源文件数据写入备份文件</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    con = old_f.read(<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(con) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    new_f.write(con)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.3 关闭文件</span></span><br><span class="line">old_f.close()</span><br><span class="line">new_f.close()</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-思考"><a href="#3-3-思考" class="headerlink" title="3.3 思考"></a>3.3 思考</h2><p>如果用户输入<code>.txt</code>，这是一个无效文件，程序如何更改才能限制只有有效的文件名才能备份？</p>
+<p>答：添加条件判断即可。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">old_name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您要备份的文件名：&#x27;</span>)</span><br><span class="line"></span><br><span class="line">index = old_name.rfind(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> index &gt; <span class="number">0</span>:</span><br><span class="line">    postfix = old_name[index:]</span><br><span class="line"></span><br><span class="line">new_name = old_name[:index] + <span class="string">&#x27;[备份]&#x27;</span> + postfix</span><br><span class="line"></span><br><span class="line">old_f = <span class="built_in">open</span>(old_name, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">new_f = <span class="built_in">open</span>(new_name, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    con = old_f.read(<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(con) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    new_f.write(con)</span><br><span class="line"></span><br><span class="line">old_f.close()</span><br><span class="line">new_f.close()</span><br></pre></td></tr></table></figure>
+<h1 id="四-文件和文件夹的操作"><a href="#四-文件和文件夹的操作" class="headerlink" title="四. 文件和文件夹的操作"></a>四. 文件和文件夹的操作</h1><p>在Python中文件和文件夹的操作要借助os模块里面的相关功能，具体步骤如下：</p>
+<ol>
+<li>导入os模块</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用<code>os</code>模块相关功能</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.函数名()</span><br></pre></td></tr></table></figure>
+<h2 id="4-1-文件重命名"><a href="#4-1-文件重命名" class="headerlink" title="4.1 文件重命名"></a>4.1 文件重命名</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.rename(目标文件名, 新文件名)</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-删除文件"><a href="#4-2-删除文件" class="headerlink" title="4.2 删除文件"></a>4.2 删除文件</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.remove(目标文件名/文件夹名字)</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-创建文件夹"><a href="#4-3-创建文件夹" class="headerlink" title="4.3 创建文件夹"></a>4.3 创建文件夹</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.mkdir(文件夹名字)</span><br></pre></td></tr></table></figure>
+<h2 id="4-4-删除文件夹"><a href="#4-4-删除文件夹" class="headerlink" title="4.4 删除文件夹"></a>4.4 删除文件夹</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.rmdir(文件夹名字)</span><br></pre></td></tr></table></figure>
+<h2 id="4-5-获取当前目录"><a href="#4-5-获取当前目录" class="headerlink" title="4.5 获取当前目录"></a>4.5 获取当前目录</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.getcwd()</span><br></pre></td></tr></table></figure>
+<h2 id="4-6-改变默认目录"><a href="#4-6-改变默认目录" class="headerlink" title="4.6 改变默认目录"></a>4.6 改变默认目录</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.chdir(目录)</span><br></pre></td></tr></table></figure>
+<h2 id="4-7-获取目录列表"><a href="#4-7-获取目录列表" class="headerlink" title="4.7 获取目录列表"></a>4.7 获取目录列表</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.listdir(目录)</span><br></pre></td></tr></table></figure>
+<h1 id="五-应用案例"><a href="#五-应用案例" class="headerlink" title="五.应用案例"></a>五.应用案例</h1><p>需求：批量修改文件名，既可添加指定字符串，又能删除指定字符串。</p>
+<ul>
+<li>步骤</li>
+</ul>
+<ol>
+<li>设置添加删除字符串的的标识</li>
+<li>获取指定目录的所有文件</li>
+<li>将原有文件名添加/删除指定字符串，构造新名字</li>
+<li>os.rename()重命名</li>
+</ol>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置重命名标识：如果为1则添加指定字符，flag取值为2则删除指定字符</span></span><br><span class="line">flag =<span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;1添加指定字符，2删除指定字符&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定目录</span></span><br><span class="line">dir_name = <span class="string">&#x27;./&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定目录的文件列表</span></span><br><span class="line">file_list = os.listdir(dir_name)</span><br><span class="line"><span class="comment"># print(file_list)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历文件列表内的文件</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> file_list:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加指定字符</span></span><br><span class="line">    <span class="keyword">if</span> flag == <span class="number">1</span>:</span><br><span class="line">        new_name = <span class="string">&#x27;Python-&#x27;</span> + name</span><br><span class="line">    <span class="comment"># 删除指定字符</span></span><br><span class="line">    <span class="keyword">elif</span> flag == <span class="number">2</span>:</span><br><span class="line">        num = <span class="built_in">len</span>(<span class="string">&#x27;Python-&#x27;</span>)</span><br><span class="line">        new_name = name[num:]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印新文件名，测试程序正确性</span></span><br><span class="line">    <span class="built_in">print</span>(new_name)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 重命名</span></span><br><span class="line">    os.rename(dir_name+name, dir_name+new_name)</span><br></pre></td></tr></table></figure>
+<h1 id="六-重点"><a href="#六-重点" class="headerlink" title="六. 重点"></a>六. 重点</h1><ul>
+<li><p>文件操作步骤</p>
+<ul>
+<li>打开</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象 = <span class="built_in">open</span>(目标文件, 访问模式)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>操作</p>
+<ul>
+<li>读</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.read()</span><br><span class="line">文件对象.readlines()</span><br><span class="line">文件对象.readline()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>写</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.write()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>seek()</li>
+</ul>
+</li>
+<li><p>关闭</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">文件对象.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>主访问模式</p>
+<ul>
+<li>w：写，文件不存在则新建该文件</li>
+<li>r：读，文件不存在则报错</li>
+<li>a：追加</li>
+</ul>
+</li>
+<li><p>文件和文件夹操作</p>
+<ul>
+<li>重命名：os.rename()</li>
+<li>获取当前目录：os.getcwd()</li>
+<li>获取目录列表：os.listdir()</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/12/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>删除某些字符/子串</title>
+    <url>/2021/12/15/%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%AD%97%E7%AC%A6/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/qWG54VTz1mskoFf.png" alt="wallhaven-d5l91o"></p>
+<h1 id="用字符数组和字符指针做函数参数实现删除某字符的相同字符"><a href="#用字符数组和字符指针做函数参数实现删除某字符的相同字符" class="headerlink" title="用字符数组和字符指针做函数参数实现删除某字符的相同字符"></a><strong>用字符数组和字符指针做函数参数实现删除某字符的相同字符</strong></h1><ul>
+<li><p>如果正向思维来做，使用编程删除某相同字符，不好实现或者说不能实现（反正我不会），那就不妨逆向思维来解决——用if条件语句打印出不用背删除的字符，跳过被删除的字符，代码如下【字符数组创建不够完美，最好使用动态数组】</p>
+<span id="more"></span>
+<ul>
+<li><p>项目1：编写函数delCharFromStr实现如下功能：在字符串str中删除与指定的某个字符ch相同的字符。要求测试程序按如下格式输出：</p>
+<p>请输入一个字符串：a string from keybord!</p>
+<p>输入一个字符：o</p>
+<p>删除后的结果：a string frm keybrd!</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span> <span class="comment">//用数组参数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=aim)<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span> <span class="comment">//用指针参数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(*a!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(*a!=aim) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*a);</span><br><span class="line">		a++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）"><a href="#删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）" class="headerlink" title="删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）"></a>删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）</h1><ul>
+<li><p>项目2：编写函数delSubstrFromStr实现如下功能：在字符串str中删除与指定的某个子串substr相同的字符。测试程序的格式同上。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span>; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">1000</span>],substr[<span class="number">1000</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个字符串：&quot;</span>);</span><br><span class="line">	gets(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;输入你要删除的字符子串：&quot;</span>);</span><br><span class="line">	gets(substr);</span><br><span class="line">	delSubstrFromStr(str,substr,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c[n],*p;<span class="comment">//c[n]是临时数组 </span></span><br><span class="line">	<span class="keyword">while</span>((p=<span class="built_in">strstr</span>(a,b))!=<span class="literal">NULL</span>)  </span><br><span class="line"><span class="comment">/*库函数strstr的作用找出b字符串第一次出现在a字符串的位置</span></span><br><span class="line"><span class="comment">（不包括b字符串的结束字符）。该函数返回该位置的指针，</span></span><br><span class="line"><span class="comment">若找不到，则返回空指针NULL */</span> </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(c,p+<span class="built_in">strlen</span>(b));   </span><br><span class="line">		*p=<span class="string">&#x27;\0&#x27;</span>;<span class="comment">//人为的添加字符串结束符&#x27;\0&#x27; </span></span><br><span class="line">		<span class="built_in">strcat</span>(a,c); </span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//puts(c); 可以看看c[n] 里面有什么 </span></span><br><span class="line">	<span class="built_in">puts</span>(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="终极模式：进阶！！！"><a href="#终极模式：进阶！！！" class="headerlink" title="终极模式：进阶！！！"></a>终极模式：进阶！！！</h1><h2 id="将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以一定要清理缓冲区，代码如下："><a href="#将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以一定要清理缓冲区，代码如下：" class="headerlink" title="将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以一定要清理缓冲区，代码如下："></a>将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以<strong>一定要清理缓冲区</strong>，代码如下：</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> ch)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[N];</span><br><span class="line">	<span class="keyword">char</span> substr[N];</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你的字符串：&quot;</span>);</span><br><span class="line">	gets(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你要删除的字符：&quot;</span>);</span><br><span class="line">	ch=getchar();</span><br><span class="line">	delCharFromStr(str,ch);</span><br><span class="line">	fflush(<span class="built_in">stdin</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你要删除的子串：&quot;</span>);</span><br><span class="line">	gets(substr);</span><br><span class="line">	delSubstrFromStr(str,substr,N); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> ch)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=ch) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c[n],*p;</span><br><span class="line">	<span class="keyword">while</span>((p=<span class="built_in">strstr</span>(a,b))!=<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(c,p+<span class="built_in">strlen</span>(b));</span><br><span class="line">		*p=<span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">		<span class="built_in">strcat</span>(a,c); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">puts</span>(a);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  文章内容会持续更新、修改。</p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python之字符串类型（一）</title>
+    <url>/2022/01/20/Python%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/5og9ktiUXYLu8j2.jpg" alt="wallhaven-g75r7d"></p>
+<span id="more"></span>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>例如：<font color=blue>(既可以用单引号，也可以用双引号,三引号)</font></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">b = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line">c =<span class="string">&#x27;&#x27;&#x27;aaaaaa&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：控制台显示结果为<code>&lt;class &#39;str&#39;&gt;</code>， 即数据类型为str(字符串)。</p>
+</blockquote>
+<h2 id="1-1-字符串特征"><a href="#1-1-字符串特征" class="headerlink" title="1.1 字符串特征"></a>1.1 字符串特征</h2><ul>
+<li>一对引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name1 = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">name2 = <span class="string">&quot;TOM&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>三引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name3 = <span class="string">&#x27;&#x27;&#x27; Tom &#x27;&#x27;&#x27;</span></span><br><span class="line">name4 = <span class="string">&quot;&quot;&quot; Rose &quot;&quot;&quot;</span></span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27; I am Tom, </span></span><br><span class="line"><span class="string">        nice to meet you! &#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">&quot;&quot;&quot; I am Rose, </span></span><br><span class="line"><span class="string">        nice to meet you! &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：<font color=blue>三引号形式的字符串支持换行。</font></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = <span class="string">&quot;I&#x27;m Tom&quot;</span></span><br><span class="line">d = <span class="string">&#x27;I\&#x27;m Tom&#x27;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要打印<code>I\&#39;m Tom</code>，要用转义字符     <font color=blue>\ </font></p>
+</blockquote>
+<h2 id="1-2-字符串输出"><a href="#1-2-字符串输出" class="headerlink" title="1.2 字符串输出"></a>1.2 字符串输出</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line">name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-字符串输入"><a href="#1-3-字符串输入" class="headerlink" title="1.3 字符串输入"></a>1.3 字符串输入</h2><p>在Python中，使用<code>input()</code>接收用户输入。</p>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的名字：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br><span class="line"></span><br><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的密码：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的密码是<span class="subst">&#123;password&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>输出结果</p>
+<p><img src="https://s2.loli.net/2022/01/20/oqZkRzCD6xSYWaG.png" alt="image-20220120101330015"></p>
+<font color=red>前面提到过，input()输入的均为字符串类型</font>
+
+</li>
+</ul>
+<h2 id="下标：即编号"><a href="#下标：即编号" class="headerlink" title="下标：即编号"></a>下标：即编号</h2><h3 id="2-1-使用下标"><a href="#2-1-使用下标" class="headerlink" title="2.1 使用下标"></a>2.1 使用下标</h3><blockquote>
+ <font color=red>从0开始</font>
+
+</blockquote>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;asdfgh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>]) <span class="comment"># s</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>]) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>]) <span class="comment"># d</span></span><br></pre></td></tr></table></figure>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
+<h3 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">序列[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<pre><code>   1. &lt;font color=red&gt;不包含结束位置下标对应的数据&lt;/font&gt;， 正负整数均可；
+            2. 步长是选取间隔，正负整数均可，默认步长为1。
+</code></pre><h3 id="3-2-体验"><a href="#3-2-体验" class="headerlink" title="3.2 体验"></a>3.2 体验</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef,负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用操作方法"><a href="#常用操作方法" class="headerlink" title="常用操作方法"></a>常用操作方法</h2><p>字符串的常用操作方法有<font color=orange>查找、修改和判断</font>三大类。</p>
+<h3 id="4-1-查找"><a href="#4-1-查找" class="headerlink" title="4.1 查找"></a>4.1 查找</h3><p>所谓字符串查找方法即是查找子串在字符串中的位置或出现的次数。</p>
+<ul>
+<li>find()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则返回-1。</font></li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.find(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># -1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>index()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则报异常</font>。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.index(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>rfind()： 和find()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
+<li>rindex()：和index()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
+<li>count()：返回某个子串在字符串中出现的次数</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.count(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>, <span class="number">0</span>, <span class="number">20</span>))  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-修改"><a href="#4-2-修改" class="headerlink" title="4.2 修改"></a>4.2 修改</h3><p>所谓修改字符串，指的就是通过函数的形式修改字符串中的数据。</p>
+<ul>
+<li>replace()：替换<font color=blue>(原数据不会被修改，有返回值)</font></li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.replace(旧子串, 新子串, 替换次数)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：替换次数如果查出子串出现次数，则替换次数为该子串出现次数。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Rose and Tom and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>, <span class="number">10</span>))</span><br><span class="line"><span class="comment"># 结果：hello world and Rose and Tom and Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：数据按照是否能直接修改分为<font color=redg>可变类型</font>和<font color=redg>不可变类型</font>两种。字符串类型的数据修改的时候不能改变原有字符串，属于不能直接修改数据的类型即是不可变类型。</p>
+</blockquote>
+<ul>
+<li>split()：按照指定字符分割字符串。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.split(分割字符, num)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：num表示的是分割字符出现的次数，即将来<font color=red>返回数据个数为num+1个</font>。<font color=blue>分割字符丢失</font></p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima &#x27;, &#x27; Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and&#x27;, &#x27;itcast&#x27;, &#x27;and&#x27;, &#x27;itheima&#x27;, &#x27;and&#x27;, &#x27;Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and itcast and itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果分割字符是原有字符串中的子串，分割后则丢失该子串。</p>
+</blockquote>
+<ul>
+<li>join()：用一个字符或子串合并字符串，即是将多个字符串合并为一个新的字符串。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">用于连接字符或子串.join(多字符串组成的序列)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;chuan&#x27;</span>, <span class="string">&#x27;zhi&#x27;</span>, <span class="string">&#x27;bo&#x27;</span>, <span class="string">&#x27;ke&#x27;</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>)</span><br><span class="line"><span class="comment"># 结果：chuan_zhi_bo_ke</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;_&#x27;</span>.join(list1))</span><br><span class="line"><span class="comment"># 结果：aa...b...cc...ddd</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;...&#x27;</span>.join(t1))</span><br></pre></td></tr></table></figure>
+<p>&lt;大小写转换函数不重要，了解即可，省略&gt;</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>大一上学期英语期末翻译重点</title>
+    <url>/2021/12/28/%E5%A4%A7%E4%B8%80%E4%B8%8A%E5%AD%A6%E6%9C%9F%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E9%87%8D%E7%82%B9/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/07/TXr6YzN8npsGo2g.jpg" alt=""></p>
+<h2 id="英语U1课本翻译"><a href="#英语U1课本翻译" class="headerlink" title="英语U1课本翻译"></a>英语U1课本翻译</h2><p><strong>今天，很多中国的大学非常重视培养学生的创新意识和创业精神（entrepreneurship）。很多知名大学与多家公司建立长期的合作关系。这些公司会定期从大学中录用合格的毕业生。此外，<span id="more"></span>有些校友还创建启动资金，支持学生创办自己的企业。一些大学的校长表示，创业与学习并不矛盾，鼓励学生创业可以帮助他们将专业知识应用于实践，提升自身的竞争力（竞争力）。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>Today, many Chinese universities attach great importance to cultivating innovation awareness and entrepreneurship. Many prestigious universities establish long-term relationships with a lot of companies. These companies recruit qualified graduates from the universities on a regular basis. What’s more, some alumni even create start-up funds to support students in starting their own business. The presidents of some universities say that doing business and studying are not in conflict and that encouraging students to set up businesses can help them put their specialized knowledge into practice and raise their competitiveness.</em></strong></p>
+<hr>
+<h2 id="英语U2课本翻译"><a href="#英语U2课本翻译" class="headerlink" title="英语U2课本翻译"></a>英语U2课本翻译</h2><p><strong>中国药膳（Chinese medicated diet） 源远流长，是中国宝贵的文化遗产，也是中医养生学的重要内容。药膳对预防疾病和强身健体有着显著的功效。比如，把冰糖和梨放在一起蒸是很好的药膳，可以起到润肺（moisten lung） 、化痰（dissolve phlegm） 、止咳（arrest cough）的作用。药膳不仅具有药物的疗效，还具有食物的美味。药膳是中国人日常饮食的重要组成部分，现在就连外国人也开始喜爱、接受中国药膳。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>Chinese medicated diets have a long history. They are part of the valuable cultural heritage of China and an important part of Chinese health study. Medicated diets have a notable effect on the prevention of diseases and improvement of physical fitness. For example, pear steamed with rock sugar is a medicated diet, good for moistening the lung, dissolving phlegm and arresting cough. Chinese medicated diets have not only the efficiency of medicine, but also the delicacy of food. They are an important part of Chinese people’s daily meals. Even people from other countries have come to love and consume Chinese medicated diets.</em></strong></p>
+<hr>
+<h2 id="英语U4课本翻译"><a href="#英语U4课本翻译" class="headerlink" title="英语U4课本翻译"></a>英语U4课本翻译</h2><p><strong>中国的父母历来重视孩子的教育。他们认为，如果孩子做事时能得到大人适当的指导，就会更愿意完成复杂的工作，因此，“手把手教”被视为教育孩子的最佳方式。近年来，受西方教育观念的影响，中国的父母开始注重培养孩子的独立性和创造力。他们鼓励孩子参加兴趣班学习绘画或音乐，希望孩子通过不断的学习和探索而获得全面的发展。</strong></p>
+<p><strong>Translation </strong></p>
+<p><strong><em>Chinese parents pay a lot of attention to their children’s education. They hold that children are more willing to accomplish complicated tasks if adults can give them proper guidance. Therefore, “teaching by giving step-by-step directions” is taken as the best way to educate children. In recent years, under the influence of Western ideas of education, Chinese parents are beginning to give more priority to fostering independence and creativity in children. They encourage their children to attend interest classes to learn painting or music. They hope that their children will become all-round individuals by constantly learning and exploring.</em></strong></p>
+<hr>
+<h2 id="英语U5课本翻译"><a href="#英语U5课本翻译" class="headerlink" title="英语U5课本翻译"></a>英语U5课本翻译</h2><p><strong>最近的调查显示，中国手机网民的数量超过电脑网民，网民的手机上网率高达85.8％。手机已成为继电视、广播、报纸、杂志之后的第五大媒体。中国人通过手机上网，享受微博、微信、播客（podcast）等新媒体所带来的便利与好处。新媒体生动、实时、互动的特点吸引了大批的年轻人。微信朋友圈让人们能够经常与朋友互动交流，而播客则满足了人们表达自我、张扬个性的需要。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>A recent survey indicated that the number of people accessing the Internet by mobile phone has overtaken the number of Internet users on computers. Online access on mobile phones has risen to 85.8%. The mobile phone has become the fifth mass medium after the traditional four media: television, radio, newspapers and magazines. With online access by mobile phone, Chinese people are enjoying the conveniences and benefits of all kinds of new media like MicroBlog, WeChat and podcasts. The vividness, real-timeness and interactivity of such media have attracted many young people. While WeChat’s circle of friends enables people to communicate and interact frequently with friends, podcasts meet people’s need for self-expression and displaying individuality.</em></strong></p>
+<hr>
+<h2 id="英语U7课本翻译"><a href="#英语U7课本翻译" class="headerlink" title="英语U7课本翻译"></a>英语U7课本翻译</h2><p><strong>中国的农历七月七日是七夕节，是牛郎（Cowherd）织女（Weaving Maid）一年一次相会的日子。七夕节源于一个浪漫的爱情故事：天上的织女和人间的牛郎互相爱慕，结为夫妻，后来却被拆散。二人化作织女星（Vega）和牛郎星（Altair），被银河分隔，遥遥相望，每年只能企盼七月七日在鹊桥（Magpie Bridge）相会。在这天晚上，有情男女都会祈祷姻缘美满。作为中国颇具浪漫色彩的民俗节日，七夕节又被称为“中国情人节”。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>Qixi Festival celebrates the annual meeting of the Cowherd and the Weaving Maid on the seventh day of the seventh lunar month in China. The festival originates from a romantic love story. The Weaving Maid in the heaven and the Cowherd down on earth are attracted to each other and eventually get married. But later they are forced to break up. The two become the constellations Vega and the Altair, separated on either side of the Milky Way, and can only expect to meet each other once a year on Magpie Bridge. On that night, men and women that have affectionate feelings for each other will pray for a happy marriage. As the Qixi Festival is a traditional Chinese festival full of romance, it is also known as the “Chinese Valentine’s Day”.</em></strong></p>
+]]></content>
+      <categories>
+        <category>大学英语</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>定积分</title>
+    <url>/2021/12/15/%E5%AE%9A%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/CTynqD3NiZe5uS2.jpg" alt="wallhaven-72rd8e"></p>
+<span id="more"></span>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line">	<span class="comment">/*f(x)为函数举例，即被积函数*/</span></span><br><span class="line">	<span class="keyword">int</span> i,n;</span><br><span class="line">	<span class="comment">/*n为区间等分的个数，应尽可能大*/</span></span><br><span class="line">	<span class="keyword">double</span> a,b,h,s;</span><br><span class="line">	<span class="comment">/*a为积分下限，b为积分上限，h为步长*/</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分下限 a:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分上限 b:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;区间等分个数 n :\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	h=(b-a)/n;  <span class="comment">/*步长的计算*/</span></span><br><span class="line">	s=<span class="number">0.5</span>*(f(a)+f(a+h))*h;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;函数 f(x) 的积分值为 s=%10.6f\n&quot;</span>,s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*以下为被积函数的定义，即函数举例*/</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	y=x*x<span class="number">-3</span>*x+<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">return</span> (y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="适用于所有的函数用来求定积分"><a href="#适用于所有的函数用来求定积分" class="headerlink" title="适用于所有的函数用来求定积分"></a>适用于所有的函数用来求定积分</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f1</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f2</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f3</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Intergral</span><span class="params">(<span class="keyword">float</span> (*f1)(<span class="keyword">float</span>),<span class="keyword">float</span> a,<span class="keyword">float</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> x1=Intergral(f1,<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">float</span> x2=Intergral(f2,<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">float</span> x3=Intergral(f3,<span class="number">0</span>,<span class="number">3.14</span>/<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;y1的定积分为%f,\ny2的定积分为%f,\ny2的定积分为%f&quot;</span>,x1,x2,x3);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Intergral</span><span class="params">(<span class="keyword">float</span> (*f)(<span class="keyword">float</span>),<span class="keyword">float</span> a,<span class="keyword">float</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> n=<span class="number">1000</span>,i;</span><br><span class="line">	<span class="keyword">float</span> h;</span><br><span class="line">	h=(b-a)/n;</span><br><span class="line">	<span class="keyword">float</span> sum = <span class="built_in">fabs</span>(<span class="number">0.5</span>*(f(a)+f(a+h))*h);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum = sum+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f1</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>+x*x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f2</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>/(<span class="number">1</span>+x*x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f3</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">cos</span>(x*x+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每一步都有意义</title>
+    <url>/2021/12/14/%E6%AF%8F%E4%B8%80%E6%AD%A5%E9%83%BD%E6%9C%89%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><span id="more"></span>
+<ul>
+<li><p>列表1</p>
+</li>
+<li><p>列表2</p>
+<p>​     a  子列表1</p>
+<p>​     b  子列表2</p>
+<ul>
+<li><p>列表3</p>
+<p><strong>下方的两种加线的方式是用“三个减号”或者“三个星号”</strong></p>
+<hr>
+<hr>
+<p><a href="https://hubu2021.gitee.io">gitee导航</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>![渡](https://ts1.cn.mm.bing.net/th?id=OIP-C.DBmNRXdg7Fz5hSSwR6ryhQAAAA&amp;w=135&amp;h=170&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;dpr=1.56&amp;pid=3.1&amp;rm=2)
+</code></pre><p><em>斜体这样的格式哦（在一对星号之间）</em></p>
+<p><strong>这样加粗哦（两对*号之间）</strong></p>
+<p><code>&lt;html&gt;&lt;/html&gt;代码块这样引用（tab键上方那个）（单行）</code></p>
+<p><strong>下面是多行的代码格式（三对tab键上方的那个英文点）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;我是标题哦&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我的内容是引用(用一个&gt;)</p>
+</blockquote>
+<font color=red font face="楷体" size=5>字体的颜色改变以及字体的选择</font>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">font</span> <span class="attr">face</span>=<span class="string">&quot;楷体&quot;</span> <span class="attr">size</span>=<span class="string">5</span>&gt;</span>输入的内容<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>这个是换行</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大一期末考试</title>
+    <url>/2021/12/23/%E5%A4%A7%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/zVspGL98UukoEFS.jpg" alt="wallhaven-72rxqo"></p>
+<span id="more"></span>
+<h1 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h1><ul>
+<li>有个小商铺其顾客一次性消费额不会超过1500元，为了扩大销售，制定促销活动规则如下：</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">商品金额</th>
+<th style="text-align:left">150元以下</th>
+<th style="text-align:left">150元至450元以下</th>
+<th style="text-align:left">450元至900元以下</th>
+<th style="text-align:left">900元至1500</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">折扣率</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0.85</td>
+<td style="text-align:left">0.75</td>
+<td style="text-align:left">0.65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>编写一个收银结算程序，假设顾客所购商品的金额为x元（由键盘输入），根据如上折扣规则，计算输出顾客实际需要支付的金额，保留两位小数（要求使用switch语句）。</p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> x;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入顾客的消费金额：&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;x);</span><br><span class="line">	<span class="keyword">char</span> y;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">0</span>&amp;&amp;x&lt;<span class="number">150</span>) y = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">150</span>&amp;&amp;x&lt;<span class="number">450</span>) y = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">450</span>&amp;&amp;x&lt;<span class="number">900</span>) y = <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">900</span>&amp;&amp;x&lt;=<span class="number">1500</span>) y = <span class="string">&#x27;d&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;<span class="number">0</span>||x&gt;<span class="number">1500</span>) y = <span class="string">&#x27;e&#x27;</span>;</span><br><span class="line">	<span class="keyword">switch</span>(y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>: x *= <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span>: x *= <span class="number">0.85</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;c&#x27;</span>: x *= <span class="number">0.75</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;d&#x27;</span>: x *= <span class="number">0.65</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;你的输入有误！！！&quot;</span>);</span><br><span class="line">			<span class="built_in">exit</span>(<span class="number">0</span>); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;价格为%.2f&quot;</span>,x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h1><ul>
+<li><p>先定义一个函数isPrime判断正整数n是否是一个素数，若是则返回1，否则返回0。然后调用该函数找出200到2000之间的所有素数并输出，每行输出10个，最后输出所有素数的个数。要求输出格式如下所示：</p>
+<p>200-2000之间的所有素数:</p>
+<p>211  223  227  229  233  239  241  251  257  263 </p>
+<p>…… </p>
+<p>1951 1973 1979 1987 1993 1997 1999 </p>
+<p>共有257个素数。</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title="#"></a>#</h2></li>
+</ul>
+  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">200</span>;i&lt;=<span class="number">2000</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(isPrime(i))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%-6d&quot;</span>,i);</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span>(cnt%<span class="number">10</span>==<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n共有有%d个素数&quot;</span>,cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;<span class="built_in">sqrt</span>(<span class="number">2000</span>);i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h1><ul>
+<li><p>编写一个函数fun，完成如下功能：将十进制正整数m转换为k（2&lt;=k&lt;=9）进制数，把转换结果作为字符串返回。例如：输入8和2，则应输出：</p>
+<p>8的2进制数是：1000</p>
+<p>在下面所给出的程序片段的基础上给出你的完整代码。</p>
+<p>#include<stdio.h></p>
+<p>char res[32]={0};//保存转换后的结果</p>
+<p>main()</p>
+<p>{     </p>
+<p>​    printf(“%d的%d进制数是：%s\n”,m,k,fun(m,k));</p>
+<p>} </p>
+<h2 id="-2"><a href="#-2" class="headerlink" title="#"></a>#</h2></li>
+</ul>
+  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"> <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="function"><span class="keyword">char</span> *<span class="title">fun</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> k)</span></span>;</span><br><span class="line"> <span class="keyword">char</span> res[<span class="number">32</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> m,k; </span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;你要把哪个十进制整数转换成几进制：&quot;</span>);</span><br><span class="line"> 	<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;m,&amp;k);</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;%d的%d进制数是：%s\n&quot;</span>,m,k,fun(m,k));	</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">char</span> *<span class="title">fun</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"> </span>&#123; </span><br><span class="line"> 	<span class="keyword">int</span> i = <span class="number">0</span>,j;</span><br><span class="line"> 	<span class="keyword">for</span>(;i &lt;=<span class="number">32</span> &amp;&amp; m &gt; <span class="number">0</span>; i++)</span><br><span class="line"> 	&#123;</span><br><span class="line"> 		res[i] = <span class="string">&#x27;0&#x27;</span> + (m % k);</span><br><span class="line"> 		m /= k;</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	<span class="keyword">for</span>(j = <span class="number">0</span>;j&lt; i / <span class="number">2</span>; j++)</span><br><span class="line"> 	&#123;</span><br><span class="line"> 		<span class="keyword">char</span> temp = res[j];</span><br><span class="line"> 		res[j] = res[i - j <span class="number">-1</span>];</span><br><span class="line"> 		res[i - j <span class="number">-1</span>] = temp;</span><br><span class="line">&#125;</span><br><span class="line"> 	<span class="keyword">return</span> res;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打印年历表</title>
+    <url>/2021/12/21/%E6%89%93%E5%8D%B0%E5%B9%B4%E5%8E%86%E8%A1%A8/</url>
+    <content><![CDATA[<h1 id="打印年历表"><a href="#打印年历表" class="headerlink" title="打印年历表"></a>打印年历表</h1><span id="more"></span>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">int</span> year;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;请输入一个年份，打印该年年历：&quot;</span>);</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;year);</span><br><span class="line"></span><br><span class="line">   printCal(year);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>((year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>)||year%<span class="number">400</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (((year<span class="number">-1</span>)*<span class="number">365</span>+(year<span class="number">-1</span>)/<span class="number">4</span>-(year<span class="number">-1</span>)/<span class="number">100</span>+(year<span class="number">-1</span>)/<span class="number">400</span>)+<span class="number">1</span>)%<span class="number">7</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(month)</span><br><span class="line">	&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">12</span>:<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">11</span>:<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">2</span>:<span class="keyword">if</span>(isLeapYear(year))<span class="keyword">return</span> <span class="number">29</span>;</span><br><span class="line">		  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">28</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printMonth</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fday,days,i,j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;==========%d月=========\n&quot;</span>,month);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; 日 一 二 三 四 五 六\n&quot;</span>);</span><br><span class="line">    fday=firstDay(year);</span><br><span class="line">    days=monthDays(year,month);</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=fday;j++)<span class="built_in">printf</span>(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=days;i++)</span><br><span class="line">	&#123;  </span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,i);</span><br><span class="line">	  j++;</span><br><span class="line">	  <span class="keyword">if</span>(j%<span class="number">7</span>==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;========%d年年历=======\n&quot;</span>,year);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">12</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printMonth(year,i);</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>让Clion支持输出中文代码</title>
+    <url>/2022/01/12/%E8%AE%A9Clion%E6%94%AF%E6%8C%81%E8%BE%93%E5%87%BA%E4%B8%AD%E6%96%87%E4%BB%A3%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="对C语言"><a href="#对C语言" class="headerlink" title="对C语言"></a>对C语言</h2><p>c语言在cmakelist.txt添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set(CMAKE_C_FLAGS &quot;$&#123;CMAKE_C_FLAGS&#125; -Wall -fexec-charset=GBK&quot;)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="对于C-语言"><a href="#对于C-语言" class="headerlink" title="对于C++语言"></a>对于C++语言</h2><p>c++在cmakelist.txt添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set(CMAKE_CXX_FLAGS &quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GBK&quot;)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>C/C++语言</category>
       </categories>
   </entry>
   <entry>
@@ -901,454 +1578,5 @@
       <categories>
         <category>python</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Python之字符串类型（一）</title>
-    <url>/2022/01/20/Python%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/5og9ktiUXYLu8j2.jpg" alt="wallhaven-g75r7d"></p>
-<span id="more"></span>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>例如：<font color=blue>(既可以用单引号，也可以用双引号,三引号)</font></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">b = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line">c =<span class="string">&#x27;&#x27;&#x27;aaaaaa&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：控制台显示结果为<code>&lt;class &#39;str&#39;&gt;</code>， 即数据类型为str(字符串)。</p>
-</blockquote>
-<h2 id="1-1-字符串特征"><a href="#1-1-字符串特征" class="headerlink" title="1.1 字符串特征"></a>1.1 字符串特征</h2><ul>
-<li>一对引号字符串</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name1 = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">name2 = <span class="string">&quot;TOM&quot;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>三引号字符串</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name3 = <span class="string">&#x27;&#x27;&#x27; Tom &#x27;&#x27;&#x27;</span></span><br><span class="line">name4 = <span class="string">&quot;&quot;&quot; Rose &quot;&quot;&quot;</span></span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27; I am Tom, </span></span><br><span class="line"><span class="string">        nice to meet you! &#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">&quot;&quot;&quot; I am Rose, </span></span><br><span class="line"><span class="string">        nice to meet you! &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：<font color=blue>三引号形式的字符串支持换行。</font></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = <span class="string">&quot;I&#x27;m Tom&quot;</span></span><br><span class="line">d = <span class="string">&#x27;I\&#x27;m Tom&#x27;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果要打印<code>I\&#39;m Tom</code>，要用转义字符     <font color=blue>\ </font></p>
-</blockquote>
-<h2 id="1-2-字符串输出"><a href="#1-2-字符串输出" class="headerlink" title="1.2 字符串输出"></a>1.2 字符串输出</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line">name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="1-3-字符串输入"><a href="#1-3-字符串输入" class="headerlink" title="1.3 字符串输入"></a>1.3 字符串输入</h2><p>在Python中，使用<code>input()</code>接收用户输入。</p>
-<ul>
-<li>代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的名字：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br><span class="line"></span><br><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的密码：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的密码是<span class="subst">&#123;password&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>输出结果</p>
-<p><img src="https://s2.loli.net/2022/01/20/oqZkRzCD6xSYWaG.png" alt="image-20220120101330015"></p>
-<font color=red>前面提到过，input()输入的均为字符串类型</font>
-
-</li>
-</ul>
-<h2 id="下标：即编号"><a href="#下标：即编号" class="headerlink" title="下标：即编号"></a>下标：即编号</h2><h3 id="2-1-使用下标"><a href="#2-1-使用下标" class="headerlink" title="2.1 使用下标"></a>2.1 使用下标</h3><blockquote>
- <font color=red>从0开始</font>
-
-</blockquote>
-<ul>
-<li>代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;asdfgh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>]) <span class="comment"># s</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>]) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>]) <span class="comment"># d</span></span><br></pre></td></tr></table></figure>
-<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
-<h3 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">序列[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意</p>
-</blockquote>
-<pre><code>   1. &lt;font color=red&gt;不包含结束位置下标对应的数据&lt;/font&gt;， 正负整数均可；
-            2. 步长是选取间隔，正负整数均可，默认步长为1。
-</code></pre><h3 id="3-2-体验"><a href="#3-2-体验" class="headerlink" title="3.2 体验"></a>3.2 体验</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef,负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
-<h2 id="常用操作方法"><a href="#常用操作方法" class="headerlink" title="常用操作方法"></a>常用操作方法</h2><p>字符串的常用操作方法有<font color=orange>查找、修改和判断</font>三大类。</p>
-<h3 id="4-1-查找"><a href="#4-1-查找" class="headerlink" title="4.1 查找"></a>4.1 查找</h3><p>所谓字符串查找方法即是查找子串在字符串中的位置或出现的次数。</p>
-<ul>
-<li>find()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则返回-1。</font></li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.find(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># -1</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>index()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则报异常</font>。</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.index(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>rfind()： 和find()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
-<li>rindex()：和index()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
-<li>count()：返回某个子串在字符串中出现的次数</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.count(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>, <span class="number">0</span>, <span class="number">20</span>))  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-2-修改"><a href="#4-2-修改" class="headerlink" title="4.2 修改"></a>4.2 修改</h3><p>所谓修改字符串，指的就是通过函数的形式修改字符串中的数据。</p>
-<ul>
-<li>replace()：替换<font color=blue>(原数据不会被修改，有返回值)</font></li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.replace(旧子串, 新子串, 替换次数)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：替换次数如果查出子串出现次数，则替换次数为该子串出现次数。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Rose and Tom and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>, <span class="number">10</span>))</span><br><span class="line"><span class="comment"># 结果：hello world and Rose and Tom and Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：数据按照是否能直接修改分为<font color=redg>可变类型</font>和<font color=redg>不可变类型</font>两种。字符串类型的数据修改的时候不能改变原有字符串，属于不能直接修改数据的类型即是不可变类型。</p>
-</blockquote>
-<ul>
-<li>split()：按照指定字符分割字符串。</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.split(分割字符, num)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：num表示的是分割字符出现的次数，即将来<font color=red>返回数据个数为num+1个</font>。<font color=blue>分割字符丢失</font></p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima &#x27;, &#x27; Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and&#x27;, &#x27;itcast&#x27;, &#x27;and&#x27;, &#x27;itheima&#x27;, &#x27;and&#x27;, &#x27;Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and itcast and itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：如果分割字符是原有字符串中的子串，分割后则丢失该子串。</p>
-</blockquote>
-<ul>
-<li>join()：用一个字符或子串合并字符串，即是将多个字符串合并为一个新的字符串。</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">用于连接字符或子串.join(多字符串组成的序列)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;chuan&#x27;</span>, <span class="string">&#x27;zhi&#x27;</span>, <span class="string">&#x27;bo&#x27;</span>, <span class="string">&#x27;ke&#x27;</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>)</span><br><span class="line"><span class="comment"># 结果：chuan_zhi_bo_ke</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;_&#x27;</span>.join(list1))</span><br><span class="line"><span class="comment"># 结果：aa...b...cc...ddd</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;...&#x27;</span>.join(t1))</span><br></pre></td></tr></table></figure>
-<p>&lt;大小写转换函数不重要，了解即可，省略&gt;</p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C++初步学习</title>
-    <url>/2022/01/16/C++%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/oe36hVriAPRGucD.jpg" alt="wallhaven-pkw6y3"></p>
-<span id="more"></span>
-<h2 id="输出输入换行"><a href="#输出输入换行" class="headerlink" title="输出输入换行"></a>输出输入换行</h2><p>（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出,“&lt;&lt;”是<code>输出运算符</code></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">char</span> c = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    <span class="keyword">float</span> d = <span class="number">123.12f</span>;</span><br><span class="line">    <span class="keyword">double</span> e = <span class="number">123.1</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; c &lt;&lt;<span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; d &lt;&lt; <span class="string">&#x27; &#x27;</span>&lt;&lt; e; <span class="comment">/*printf不能直接这样，而						是要用续行符&#x27;\&#x27;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​    ( 2 )  输入cin:：$\textcolor{red}{(属于对象)}$，可连续输入，也会自动识别变量的类型。“&gt;&gt;”是输入运算符。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a;</span><br><span class="line">    <span class="keyword">float</span> b;</span><br><span class="line">    <span class="keyword">int</span> c;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;请输入\n&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;<span class="string">&#x27;\n&#x27;</span>&lt;&lt; b &lt;&lt; <span class="string">&#x27;\n&#x27;</span> &lt;&lt; c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>​    ( 3 ) 换行endl：换行，并且$\textcolor{red}{清空缓冲区}$；当然也可以使用C语言中的’\n’$\textcolor{red}{(\n相当于一个字符，在C语言中有学)}$,但该字符没有清空缓冲区的作用。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;hello world \n&quot;</span>;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;hello C3&quot;</span>&lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;asdf&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><ul>
-<li>功能：用于区分同名变量或函数</li>
-</ul>
-<ol>
-<li>创建普通格式</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name  <span class="comment">//name不能重复</span></span><br><span class="line">&#123;</span><br><span class="line">    code;<span class="comment">//表示代码片段,可以定义函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>命名空间可以嵌套</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name1</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> printf = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> rand = <span class="number">2</span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a + b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">namespace</span> name2</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">0</span>; </span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">Sub</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> a - b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>同一个工程中允许存在多个相同名称的命名空间,编译器最后会合成同一个命名空间中。</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>它会与上面的name命名空间合并</strong></p>
-<p>命名空间的调用调用的是数据的地址，因此不能直接调用，可以采用以下几种方法</p>
-</blockquote>
-<p>(1)打开：使用using namespace name;</p>
-<ul>
-<li>using声明语句既可以像代码2-1一样放在main()函数内部（std名称空间中所有的名称只能在main（）函数内使用），也可以放在main（）函数外部，使其获得全局的可见性，这样可以在文件中任何地方使用std名称空间中所有的名称。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//命名空间的创建</span></span><br><span class="line"><span class="comment">//区分同名变量或函数</span></span><br><span class="line"><span class="keyword">namespace</span> stu</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> stu1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu1&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打开函数：using namespace name;可以放在main函数外，也可以放在main函数内，但不能在创建命名空间和main函数后</span></span><br><span class="line"><span class="keyword">using</span> namepace stu;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//变量或函数的调用</span></span><br><span class="line">    <span class="built_in">sort</span>();</span><br><span class="line">    <span class="comment">/*using namespace stu;</span></span><br><span class="line"><span class="comment">    sort();</span></span><br><span class="line"><span class="comment">    using namespace stu1;</span></span><br><span class="line"><span class="comment">    sort();*/</span> <span class="comment">//这样会报错：sort声明是模糊的；解决方法见方法二</span></span><br><span class="line">  	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>(2) 使用作用域运算符“ $\textcolor{red}{::}$” ：格式</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">name::变量名/函数名;</span><br></pre></td></tr></table></figure>
-<p>具体用法：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//命名空间的创建</span></span><br><span class="line"><span class="comment">//区分同名变量或函数</span></span><br><span class="line"><span class="keyword">namespace</span> stu</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> stu1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;stu1&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    stu::<span class="built_in">sort</span>();</span><br><span class="line">	stu1::<span class="built_in">sort</span>();<span class="comment">//这样就不会报错了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="ANSI-ISO-C-关键字"><a href="#ANSI-ISO-C-关键字" class="headerlink" title="ANSI/ISO C++关键字"></a>ANSI/ISO C++关键字</h2><p><img src="https://s2.loli.net/2022/01/17/cFnhJwBZ1sLjrPO.jpg" alt="img"></p>
-<p><strong>关键字是一种特殊的标识符，关键字具有特定的含义，不能再对其定义。</strong></p>
-<ul>
-<li>将0赋给bool型变量时，将被转换为false，而非零值将转换为true。</li>
-</ul>
-<h2 id="struct结构体"><a href="#struct结构体" class="headerlink" title="struct结构体"></a>struct结构体</h2><p><em>在C++中是一个特殊的类</em>  </p>
-<h3 id="C-独有的"><a href="#C-独有的" class="headerlink" title="C++独有的"></a>C++独有的</h3><ol>
-<li>结构体声明变量可以不用struct关键字；</li>
-<li>在结构体中可以加入函数成员；</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">c</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Node b;<span class="comment">//结构体声明变量可以不用struct关键字</span></span><br><span class="line">    b.<span class="built_in">c</span>();<span class="comment">//调用结构体中的函数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="而C语言没有以上用法"><a href="#而C语言没有以上用法" class="headerlink" title="而C语言没有以上用法"></a>而C语言没有以上用法</h3><ol>
-<li>虽然C语言不能放入函数成员，但可以放入函数的地址。</li>
-</ol>
-<p>C语言的结构体中不能有函数，但可以通过指针来调用函数</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">void</span> (*p)();<span class="comment">//指针函数；</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">b</span> =</span> &#123;<span class="number">1</span>,func&#125;;<span class="comment">//声明变量并赋值</span></span><br><span class="line">    b.p();<span class="comment">//通过指针来调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="空间申请与释放-new-与-delete"><a href="#空间申请与释放-new-与-delete" class="headerlink" title="空间申请与释放:new 与 delete"></a>空间申请与释放:new 与 delete</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>;<span class="comment">//申请单个内存空间 new + type</span></span><br><span class="line">    *p = <span class="number">12</span>; <span class="comment">//赋值</span></span><br><span class="line">    <span class="keyword">int</span> *p1 = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(<span class="number">121</span>);<span class="comment">//直接初始化：new + type(value)</span></span><br><span class="line">    cout &lt;&lt; *p &lt;&lt;endl</span><br><span class="line">        &lt;&lt; *p1&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">delete</span> p;   <span class="comment">//内存释放 delete+指针</span></span><br><span class="line">    <span class="keyword">delete</span> p1;  <span class="comment">//内存释放</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//申请数组空间</span></span><br><span class="line">    <span class="keyword">int</span> *p2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];<span class="comment">//C++申请数组空间</span></span><br><span class="line">    <span class="comment">//int *p3 = (int*)malloc(5*sizeof(int));C语言</span></span><br><span class="line">    <span class="comment">//p[0] = 13;</span></span><br><span class="line">    <span class="built_in">memset</span>(p2,<span class="number">0</span>,<span class="number">5</span>*<span class="number">4</span>);<span class="comment">//初始化数组，避免出现“乱码”</span></span><br><span class="line">    cout &lt;&lt; p2[<span class="number">0</span>]&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p2[<span class="number">1</span>]&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p2[<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">delete</span>[] p2; <span class="comment">//释放数组空间：delete[]+指针</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>释放空间要适配：释放单个空间用delete + 指针，</p>
-<p>​                                释放数组空间用delete[] +指针（要带方括号）</p>
-<p>memset():用于内存初始化的“万能函数”，通常为新申请的内存进行初始化工作函数原型为</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memset</span><span class="params">(<span class="keyword">void</span> *p,<span class="keyword">int</span> c,<span class="keyword">unsigned</span> <span class="keyword">long</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>调用方法：申请空间后：memset(p,0,sizeof(*p));</p>
-</blockquote>
-<h2 id="引用变量"><a href="#引用变量" class="headerlink" title="引用变量"></a>引用变量</h2><ol>
-<li>定义就要初始化</li>
-<li>不能再指向其他的了</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//变量起别名</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">12</span>;</span><br><span class="line">    <span class="keyword">int</span> &amp;c = a; <span class="comment">//声明变量a的引用 c,c是a的别名</span></span><br><span class="line">    <span class="keyword">int</span> &amp;d = a;<span class="comment">//声明就要初始化</span></span><br><span class="line">    <span class="keyword">int</span> &amp;e = c;</span><br><span class="line">    <span class="comment">//观察输出的地址</span></span><br><span class="line">    cout &lt;&lt; &amp;a &lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; &amp;c &lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; &amp;e &lt;&lt;endl;</span><br><span class="line">    c = <span class="number">100</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;endl;  <span class="comment">//输出结果是100、</span></span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">14</span>;</span><br><span class="line">    d = f;  <span class="comment">//是把f的值赋给d,并不是重新引用；</span></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;<span class="comment">//输出结果是14</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>输出结果：$\colorbox{yellow}{输出的地址完全一样，都是同一个量}$<img src="https://s2.loli.net/2022/01/19/Z1qScyKJTudH7vC.png" alt="image-20220119210839904"></p>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>定积分</title>
-    <url>/2021/12/15/%E5%AE%9A%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/CTynqD3NiZe5uS2.jpg" alt="wallhaven-72rd8e"></p>
-<span id="more"></span>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span>;</span><br><span class="line">	<span class="comment">/*f(x)为函数举例，即被积函数*/</span></span><br><span class="line">	<span class="keyword">int</span> i,n;</span><br><span class="line">	<span class="comment">/*n为区间等分的个数，应尽可能大*/</span></span><br><span class="line">	<span class="keyword">double</span> a,b,h,s;</span><br><span class="line">	<span class="comment">/*a为积分下限，b为积分上限，h为步长*/</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分下限 a:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;积分上限 b:\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;区间等分个数 n :\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	h=(b-a)/n;  <span class="comment">/*步长的计算*/</span></span><br><span class="line">	s=<span class="number">0.5</span>*(f(a)+f(a+h))*h;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;函数 f(x) 的积分值为 s=%10.6f\n&quot;</span>,s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*以下为被积函数的定义，即函数举例*/</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> y;</span><br><span class="line">	y=x*x<span class="number">-3</span>*x+<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">return</span> (y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="适用于所有的函数用来求定积分"><a href="#适用于所有的函数用来求定积分" class="headerlink" title="适用于所有的函数用来求定积分"></a>适用于所有的函数用来求定积分</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f1</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f2</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f3</span><span class="params">(<span class="keyword">float</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Intergral</span><span class="params">(<span class="keyword">float</span> (*f1)(<span class="keyword">float</span>),<span class="keyword">float</span> a,<span class="keyword">float</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> x1=Intergral(f1,<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">float</span> x2=Intergral(f2,<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">float</span> x3=Intergral(f3,<span class="number">0</span>,<span class="number">3.14</span>/<span class="number">2</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;y1的定积分为%f,\ny2的定积分为%f,\ny2的定积分为%f&quot;</span>,x1,x2,x3);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Intergral</span><span class="params">(<span class="keyword">float</span> (*f)(<span class="keyword">float</span>),<span class="keyword">float</span> a,<span class="keyword">float</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> n=<span class="number">1000</span>,i;</span><br><span class="line">	<span class="keyword">float</span> h;</span><br><span class="line">	h=(b-a)/n;</span><br><span class="line">	<span class="keyword">float</span> sum = <span class="built_in">fabs</span>(<span class="number">0.5</span>*(f(a)+f(a+h))*h);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum = sum+<span class="number">0.5</span>*(f(a+i*h)+f(a+(i+<span class="number">1</span>)*h))*h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f1</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>+x*x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f2</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>/(<span class="number">1</span>+x*x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">f3</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">cos</span>(x*x+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打印年历表</title>
-    <url>/2021/12/21/%E6%89%93%E5%8D%B0%E5%B9%B4%E5%8E%86%E8%A1%A8/</url>
-    <content><![CDATA[<h1 id="打印年历表"><a href="#打印年历表" class="headerlink" title="打印年历表"></a>打印年历表</h1><span id="more"></span>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">int</span> year;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;请输入一个年份，打印该年年历：&quot;</span>);</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;year);</span><br><span class="line"></span><br><span class="line">   printCal(year);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>((year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>)||year%<span class="number">400</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (((year<span class="number">-1</span>)*<span class="number">365</span>+(year<span class="number">-1</span>)/<span class="number">4</span>-(year<span class="number">-1</span>)/<span class="number">100</span>+(year<span class="number">-1</span>)/<span class="number">400</span>)+<span class="number">1</span>)%<span class="number">7</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(month)</span><br><span class="line">	&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">12</span>:<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">11</span>:<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">2</span>:<span class="keyword">if</span>(isLeapYear(year))<span class="keyword">return</span> <span class="number">29</span>;</span><br><span class="line">		  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">28</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printMonth</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fday,days,i,j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;==========%d月=========\n&quot;</span>,month);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; 日 一 二 三 四 五 六\n&quot;</span>);</span><br><span class="line">    fday=firstDay(year);</span><br><span class="line">    days=monthDays(year,month);</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=fday;j++)<span class="built_in">printf</span>(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=days;i++)</span><br><span class="line">	&#123;  </span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,i);</span><br><span class="line">	  j++;</span><br><span class="line">	  <span class="keyword">if</span>(j%<span class="number">7</span>==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;========%d年年历=======\n&quot;</span>,year);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">12</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printMonth(year,i);</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>让Clion支持输出中文代码</title>
-    <url>/2022/01/12/%E8%AE%A9Clion%E6%94%AF%E6%8C%81%E8%BE%93%E5%87%BA%E4%B8%AD%E6%96%87%E4%BB%A3%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="对C语言"><a href="#对C语言" class="headerlink" title="对C语言"></a>对C语言</h2><p>c语言在cmakelist.txt添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set(CMAKE_C_FLAGS &quot;$&#123;CMAKE_C_FLAGS&#125; -Wall -fexec-charset=GBK&quot;)</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="对于C-语言"><a href="#对于C-语言" class="headerlink" title="对于C++语言"></a>对于C++语言</h2><p>c++在cmakelist.txt添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set(CMAKE_CXX_FLAGS &quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -fexec-charset=GBK&quot;)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C/C++语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>大一上学期英语期末翻译重点</title>
-    <url>/2021/12/28/%E5%A4%A7%E4%B8%80%E4%B8%8A%E5%AD%A6%E6%9C%9F%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E9%87%8D%E7%82%B9/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/07/TXr6YzN8npsGo2g.jpg" alt=""></p>
-<h2 id="英语U1课本翻译"><a href="#英语U1课本翻译" class="headerlink" title="英语U1课本翻译"></a>英语U1课本翻译</h2><p><strong>今天，很多中国的大学非常重视培养学生的创新意识和创业精神（entrepreneurship）。很多知名大学与多家公司建立长期的合作关系。这些公司会定期从大学中录用合格的毕业生。此外，<span id="more"></span>有些校友还创建启动资金，支持学生创办自己的企业。一些大学的校长表示，创业与学习并不矛盾，鼓励学生创业可以帮助他们将专业知识应用于实践，提升自身的竞争力（竞争力）。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>Today, many Chinese universities attach great importance to cultivating innovation awareness and entrepreneurship. Many prestigious universities establish long-term relationships with a lot of companies. These companies recruit qualified graduates from the universities on a regular basis. What’s more, some alumni even create start-up funds to support students in starting their own business. The presidents of some universities say that doing business and studying are not in conflict and that encouraging students to set up businesses can help them put their specialized knowledge into practice and raise their competitiveness.</em></strong></p>
-<hr>
-<h2 id="英语U2课本翻译"><a href="#英语U2课本翻译" class="headerlink" title="英语U2课本翻译"></a>英语U2课本翻译</h2><p><strong>中国药膳（Chinese medicated diet） 源远流长，是中国宝贵的文化遗产，也是中医养生学的重要内容。药膳对预防疾病和强身健体有着显著的功效。比如，把冰糖和梨放在一起蒸是很好的药膳，可以起到润肺（moisten lung） 、化痰（dissolve phlegm） 、止咳（arrest cough）的作用。药膳不仅具有药物的疗效，还具有食物的美味。药膳是中国人日常饮食的重要组成部分，现在就连外国人也开始喜爱、接受中国药膳。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>Chinese medicated diets have a long history. They are part of the valuable cultural heritage of China and an important part of Chinese health study. Medicated diets have a notable effect on the prevention of diseases and improvement of physical fitness. For example, pear steamed with rock sugar is a medicated diet, good for moistening the lung, dissolving phlegm and arresting cough. Chinese medicated diets have not only the efficiency of medicine, but also the delicacy of food. They are an important part of Chinese people’s daily meals. Even people from other countries have come to love and consume Chinese medicated diets.</em></strong></p>
-<hr>
-<h2 id="英语U4课本翻译"><a href="#英语U4课本翻译" class="headerlink" title="英语U4课本翻译"></a>英语U4课本翻译</h2><p><strong>中国的父母历来重视孩子的教育。他们认为，如果孩子做事时能得到大人适当的指导，就会更愿意完成复杂的工作，因此，“手把手教”被视为教育孩子的最佳方式。近年来，受西方教育观念的影响，中国的父母开始注重培养孩子的独立性和创造力。他们鼓励孩子参加兴趣班学习绘画或音乐，希望孩子通过不断的学习和探索而获得全面的发展。</strong></p>
-<p><strong>Translation </strong></p>
-<p><strong><em>Chinese parents pay a lot of attention to their children’s education. They hold that children are more willing to accomplish complicated tasks if adults can give them proper guidance. Therefore, “teaching by giving step-by-step directions” is taken as the best way to educate children. In recent years, under the influence of Western ideas of education, Chinese parents are beginning to give more priority to fostering independence and creativity in children. They encourage their children to attend interest classes to learn painting or music. They hope that their children will become all-round individuals by constantly learning and exploring.</em></strong></p>
-<hr>
-<h2 id="英语U5课本翻译"><a href="#英语U5课本翻译" class="headerlink" title="英语U5课本翻译"></a>英语U5课本翻译</h2><p><strong>最近的调查显示，中国手机网民的数量超过电脑网民，网民的手机上网率高达85.8％。手机已成为继电视、广播、报纸、杂志之后的第五大媒体。中国人通过手机上网，享受微博、微信、播客（podcast）等新媒体所带来的便利与好处。新媒体生动、实时、互动的特点吸引了大批的年轻人。微信朋友圈让人们能够经常与朋友互动交流，而播客则满足了人们表达自我、张扬个性的需要。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>A recent survey indicated that the number of people accessing the Internet by mobile phone has overtaken the number of Internet users on computers. Online access on mobile phones has risen to 85.8%. The mobile phone has become the fifth mass medium after the traditional four media: television, radio, newspapers and magazines. With online access by mobile phone, Chinese people are enjoying the conveniences and benefits of all kinds of new media like MicroBlog, WeChat and podcasts. The vividness, real-timeness and interactivity of such media have attracted many young people. While WeChat’s circle of friends enables people to communicate and interact frequently with friends, podcasts meet people’s need for self-expression and displaying individuality.</em></strong></p>
-<hr>
-<h2 id="英语U7课本翻译"><a href="#英语U7课本翻译" class="headerlink" title="英语U7课本翻译"></a>英语U7课本翻译</h2><p><strong>中国的农历七月七日是七夕节，是牛郎（Cowherd）织女（Weaving Maid）一年一次相会的日子。七夕节源于一个浪漫的爱情故事：天上的织女和人间的牛郎互相爱慕，结为夫妻，后来却被拆散。二人化作织女星（Vega）和牛郎星（Altair），被银河分隔，遥遥相望，每年只能企盼七月七日在鹊桥（Magpie Bridge）相会。在这天晚上，有情男女都会祈祷姻缘美满。作为中国颇具浪漫色彩的民俗节日，七夕节又被称为“中国情人节”。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>Qixi Festival celebrates the annual meeting of the Cowherd and the Weaving Maid on the seventh day of the seventh lunar month in China. The festival originates from a romantic love story. The Weaving Maid in the heaven and the Cowherd down on earth are attracted to each other and eventually get married. But later they are forced to break up. The two become the constellations Vega and the Altair, separated on either side of the Milky Way, and can only expect to meet each other once a year on Magpie Bridge. On that night, men and women that have affectionate feelings for each other will pray for a happy marriage. As the Qixi Festival is a traditional Chinese festival full of romance, it is also known as the “Chinese Valentine’s Day”.</em></strong></p>
-]]></content>
-      <categories>
-        <category>大学英语</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大一期末考试</title>
-    <url>/2021/12/23/%E5%A4%A7%E4%B8%80%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/19/zVspGL98UukoEFS.jpg" alt="wallhaven-72rxqo"></p>
-<span id="more"></span>
-<h1 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h1><ul>
-<li>有个小商铺其顾客一次性消费额不会超过1500元，为了扩大销售，制定促销活动规则如下：</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">商品金额</th>
-<th style="text-align:left">150元以下</th>
-<th style="text-align:left">150元至450元以下</th>
-<th style="text-align:left">450元至900元以下</th>
-<th style="text-align:left">900元至1500</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">折扣率</td>
-<td style="text-align:left">1</td>
-<td style="text-align:left">0.85</td>
-<td style="text-align:left">0.75</td>
-<td style="text-align:left">0.65</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>编写一个收银结算程序，假设顾客所购商品的金额为x元（由键盘输入），根据如上折扣规则，计算输出顾客实际需要支付的金额，保留两位小数（要求使用switch语句）。</p>
-<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> x;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入顾客的消费金额：&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;x);</span><br><span class="line">	<span class="keyword">char</span> y;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">0</span>&amp;&amp;x&lt;<span class="number">150</span>) y = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">150</span>&amp;&amp;x&lt;<span class="number">450</span>) y = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">450</span>&amp;&amp;x&lt;<span class="number">900</span>) y = <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&gt;=<span class="number">900</span>&amp;&amp;x&lt;=<span class="number">1500</span>) y = <span class="string">&#x27;d&#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;<span class="number">0</span>||x&gt;<span class="number">1500</span>) y = <span class="string">&#x27;e&#x27;</span>;</span><br><span class="line">	<span class="keyword">switch</span>(y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>: x *= <span class="number">1</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span>: x *= <span class="number">0.85</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;c&#x27;</span>: x *= <span class="number">0.75</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;d&#x27;</span>: x *= <span class="number">0.65</span>; <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;你的输入有误！！！&quot;</span>);</span><br><span class="line">			<span class="built_in">exit</span>(<span class="number">0</span>); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;价格为%.2f&quot;</span>,x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h1><ul>
-<li><p>先定义一个函数isPrime判断正整数n是否是一个素数，若是则返回1，否则返回0。然后调用该函数找出200到2000之间的所有素数并输出，每行输出10个，最后输出所有素数的个数。要求输出格式如下所示：</p>
-<p>200-2000之间的所有素数:</p>
-<p>211  223  227  229  233  239  241  251  257  263 </p>
-<p>…… </p>
-<p>1951 1973 1979 1987 1993 1997 1999 </p>
-<p>共有257个素数。</p>
-<h2 id="-1"><a href="#-1" class="headerlink" title="#"></a>#</h2></li>
-</ul>
-  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">200</span>;i&lt;=<span class="number">2000</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(isPrime(i))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%-6d&quot;</span>,i);</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span>(cnt%<span class="number">10</span>==<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n共有有%d个素数&quot;</span>,cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;<span class="built_in">sqrt</span>(<span class="number">2000</span>);i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h1><ul>
-<li><p>编写一个函数fun，完成如下功能：将十进制正整数m转换为k（2&lt;=k&lt;=9）进制数，把转换结果作为字符串返回。例如：输入8和2，则应输出：</p>
-<p>8的2进制数是：1000</p>
-<p>在下面所给出的程序片段的基础上给出你的完整代码。</p>
-<p>#include<stdio.h></p>
-<p>char res[32]={0};//保存转换后的结果</p>
-<p>main()</p>
-<p>{     </p>
-<p>​    printf(“%d的%d进制数是：%s\n”,m,k,fun(m,k));</p>
-<p>} </p>
-<h2 id="-2"><a href="#-2" class="headerlink" title="#"></a>#</h2></li>
-</ul>
-  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"> <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="function"><span class="keyword">char</span> *<span class="title">fun</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> k)</span></span>;</span><br><span class="line"> <span class="keyword">char</span> res[<span class="number">32</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> m,k; </span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;你要把哪个十进制整数转换成几进制：&quot;</span>);</span><br><span class="line"> 	<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;m,&amp;k);</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;%d的%d进制数是：%s\n&quot;</span>,m,k,fun(m,k));	</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">char</span> *<span class="title">fun</span><span class="params">(<span class="keyword">int</span> m,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"> </span>&#123; </span><br><span class="line"> 	<span class="keyword">int</span> i = <span class="number">0</span>,j;</span><br><span class="line"> 	<span class="keyword">for</span>(;i &lt;=<span class="number">32</span> &amp;&amp; m &gt; <span class="number">0</span>; i++)</span><br><span class="line"> 	&#123;</span><br><span class="line"> 		res[i] = <span class="string">&#x27;0&#x27;</span> + (m % k);</span><br><span class="line"> 		m /= k;</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	<span class="keyword">for</span>(j = <span class="number">0</span>;j&lt; i / <span class="number">2</span>; j++)</span><br><span class="line"> 	&#123;</span><br><span class="line"> 		<span class="keyword">char</span> temp = res[j];</span><br><span class="line"> 		res[j] = res[i - j <span class="number">-1</span>];</span><br><span class="line"> 		res[i - j <span class="number">-1</span>] = temp;</span><br><span class="line">&#125;</span><br><span class="line"> 	<span class="keyword">return</span> res;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>删除某些字符/子串</title>
-    <url>/2021/12/15/%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%AD%97%E7%AC%A6/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/qWG54VTz1mskoFf.png" alt="wallhaven-d5l91o"></p>
-<h1 id="用字符数组和字符指针做函数参数实现删除某字符的相同字符"><a href="#用字符数组和字符指针做函数参数实现删除某字符的相同字符" class="headerlink" title="用字符数组和字符指针做函数参数实现删除某字符的相同字符"></a><strong>用字符数组和字符指针做函数参数实现删除某字符的相同字符</strong></h1><ul>
-<li><p>如果正向思维来做，使用编程删除某相同字符，不好实现或者说不能实现（反正我不会），那就不妨逆向思维来解决——用if条件语句打印出不用背删除的字符，跳过被删除的字符，代码如下【字符数组创建不够完美，最好使用动态数组】</p>
-<span id="more"></span>
-<ul>
-<li><p>项目1：编写函数delCharFromStr实现如下功能：在字符串str中删除与指定的某个字符ch相同的字符。要求测试程序按如下格式输出：</p>
-<p>请输入一个字符串：a string from keybord!</p>
-<p>输入一个字符：o</p>
-<p>删除后的结果：a string frm keybrd!</p>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr1</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> aim)</span> <span class="comment">//用数组参数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=aim)<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr2</span><span class="params">(<span class="keyword">char</span> *a,<span class="keyword">char</span> aim)</span> <span class="comment">//用指针参数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(*a!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(*a!=aim) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,*a);</span><br><span class="line">		a++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）"><a href="#删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）" class="headerlink" title="删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）"></a>删除某个字符串中的某一子串（强烈推荐使用string库中的函数来char型）</h1><ul>
-<li><p>项目2：编写函数delSubstrFromStr实现如下功能：在字符串str中删除与指定的某个子串substr相同的字符。测试程序的格式同上。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span>; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">1000</span>],substr[<span class="number">1000</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个字符串：&quot;</span>);</span><br><span class="line">	gets(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;输入你要删除的字符子串：&quot;</span>);</span><br><span class="line">	gets(substr);</span><br><span class="line">	delSubstrFromStr(str,substr,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c[n],*p;<span class="comment">//c[n]是临时数组 </span></span><br><span class="line">	<span class="keyword">while</span>((p=<span class="built_in">strstr</span>(a,b))!=<span class="literal">NULL</span>)  </span><br><span class="line"><span class="comment">/*库函数strstr的作用找出b字符串第一次出现在a字符串的位置</span></span><br><span class="line"><span class="comment">（不包括b字符串的结束字符）。该函数返回该位置的指针，</span></span><br><span class="line"><span class="comment">若找不到，则返回空指针NULL */</span> </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(c,p+<span class="built_in">strlen</span>(b));   </span><br><span class="line">		*p=<span class="string">&#x27;\0&#x27;</span>;<span class="comment">//人为的添加字符串结束符&#x27;\0&#x27; </span></span><br><span class="line">		<span class="built_in">strcat</span>(a,c); </span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//puts(c); 可以看看c[n] 里面有什么 </span></span><br><span class="line">	<span class="built_in">puts</span>(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="终极模式：进阶！！！"><a href="#终极模式：进阶！！！" class="headerlink" title="终极模式：进阶！！！"></a>终极模式：进阶！！！</h1><h2 id="将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以一定要清理缓冲区，代码如下："><a href="#将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以一定要清理缓冲区，代码如下：" class="headerlink" title="将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以一定要清理缓冲区，代码如下："></a>将删除删除字符和子串合在一起，同时调用（可不要简单的认为把两个声明函数加入就OK了）如果这样做，会发现只能完成第一项，而第二项（项目2）的那一步不能输入值，那是因为缓冲区内有值，所以<strong>一定要清理缓冲区</strong>，代码如下：</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> ch)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[N];</span><br><span class="line">	<span class="keyword">char</span> substr[N];</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你的字符串：&quot;</span>);</span><br><span class="line">	gets(str);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你要删除的字符：&quot;</span>);</span><br><span class="line">	ch=getchar();</span><br><span class="line">	delCharFromStr(str,ch);</span><br><span class="line">	fflush(<span class="built_in">stdin</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输出你要删除的子串：&quot;</span>);</span><br><span class="line">	gets(substr);</span><br><span class="line">	delSubstrFromStr(str,substr,N); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delCharFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> ch)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;a[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=ch) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delSubstrFromStr</span><span class="params">(<span class="keyword">char</span> a[],<span class="keyword">char</span> b[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c[n],*p;</span><br><span class="line">	<span class="keyword">while</span>((p=<span class="built_in">strstr</span>(a,b))!=<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">strcpy</span>(c,p+<span class="built_in">strlen</span>(b));</span><br><span class="line">		*p=<span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">		<span class="built_in">strcat</span>(a,c); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">puts</span>(a);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>  文章内容会持续更新、修改。</p>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>每一步都有意义</title>
-    <url>/2021/12/14/%E6%AF%8F%E4%B8%80%E6%AD%A5%E9%83%BD%E6%9C%89%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><span id="more"></span>
-<ul>
-<li><p>列表1</p>
-</li>
-<li><p>列表2</p>
-<p>​     a  子列表1</p>
-<p>​     b  子列表2</p>
-<ul>
-<li><p>列表3</p>
-<p><strong>下方的两种加线的方式是用“三个减号”或者“三个星号”</strong></p>
-<hr>
-<hr>
-<p><a href="https://hubu2021.gitee.io">gitee导航</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>![渡](https://ts1.cn.mm.bing.net/th?id=OIP-C.DBmNRXdg7Fz5hSSwR6ryhQAAAA&amp;w=135&amp;h=170&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;dpr=1.56&amp;pid=3.1&amp;rm=2)
-</code></pre><p><em>斜体这样的格式哦（在一对星号之间）</em></p>
-<p><strong>这样加粗哦（两对*号之间）</strong></p>
-<p><code>&lt;html&gt;&lt;/html&gt;代码块这样引用（tab键上方那个）（单行）</code></p>
-<p><strong>下面是多行的代码格式（三对tab键上方的那个英文点）</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;我是标题哦&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>我的内容是引用(用一个&gt;)</p>
-</blockquote>
-<font color=red font face="楷体" size=5>字体的颜色改变以及字体的选择</font>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">font</span> <span class="attr">face</span>=<span class="string">&quot;楷体&quot;</span> <span class="attr">size</span>=<span class="string">5</span>&gt;</span>输入的内容<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>这个是换行</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/12/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
