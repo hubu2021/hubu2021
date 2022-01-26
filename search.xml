@@ -1379,7 +1379,46 @@
 <p>报错信息：<img src="https://s2.loli.net/2022/01/24/Kz3Pfg6jUdWiA2p.png" alt="image-20220124160644957"></p>
 <h6 id="指针与引用的区别"><a href="#指针与引用的区别" class="headerlink" title="指针与引用的区别"></a>指针与引用的区别</h6><p><img src="https://s2.loli.net/2022/01/24/7x2XPsMjHfT1WZJ.png" alt="image-20220124160312896"></p>
 <h6 id="参数缺省值"><a href="#参数缺省值" class="headerlink" title="参数缺省值"></a>参数缺省值</h6><p><img src="https://s2.loli.net/2022/01/24/cAoS4hfe7sMTWxp.png" alt="image-20220124163130221"></p>
-<h3 id="函数重构"><a href="#函数重构" class="headerlink" title="函数重构"></a>函数重构</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="函数重载："><a href="#函数重载：" class="headerlink" title="函数重载："></a>函数重载：</h3><ol>
+<li><font color=red>函数的名字相同，参数列表不同（<font color=blue>参数的类型或参数的个数</font>）</font></li>
+<li><font color=purple>返回值不同不作为函数重载的条件</font>(即函数类型)</li>
+<li><font color=red>默认参数和重载结合使用可能会造成调用不明确</font><font color=blue>(编译没问题但运行会报错)</font>
+
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//如果函数定义在main前面，函数声明可以省略</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;1--&gt;&quot;</span>&lt;&lt;a&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">float</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;2--&gt;&quot;</span>&lt;&lt;a&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">char</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;3--&gt;&quot;</span>&lt;&lt;a&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt; b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fun</span>(<span class="number">1</span>,<span class="number">2.1f</span>); <span class="comment">//如果是float型，一定要加上一个f后缀，否则磨人是double型，就会报错</span></span><br><span class="line">    <span class="built_in">fun</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="built_in">fun</span>(<span class="number">1</span>,<span class="string">&#x27;s&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>防止头文件重复包含：</p>
+<ol>
+<li>通用性</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> AAA</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AAA</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//要声明的函数或者变量代码</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>取决于编译器，不利于移植代码</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br></pre></td></tr></table></figure>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li><font color=red>和结构体一样，只不过关键字不同</font></li>
+<li><font color=blue>结构体是类的特定情况</font>
+</li>
+</ul>
+<ol>
+<li>类声明</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名:</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;   <span class="comment">//结尾有个分号</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>声明对象</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//普通类型</span></span><br><span class="line">类名 对象名;</span><br><span class="line"></span><br><span class="line"><span class="comment">//指针类型</span></span><br><span class="line">类名* 对象名 = <span class="keyword">new</span> 对象名;   <span class="comment">//不要忘了释放空间</span></span><br></pre></td></tr></table></figure>
+<h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3><ul>
+<li>访问修饰符的作用范围<font color=red>是书写的位置到下一个修饰符的位置，或这类结尾的花括号}</font></li>
+</ul>
+<ol>
+<li>public 与private</li>
+</ol>
+<ul>
+<li>类内不写访问修饰符就默认为private（安全性更高）</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cpeople</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:  <span class="comment">//公有的，类外可见</span></span><br><span class="line">        <span class="comment">//private：私有的，类内可用</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;fun&quot;</span> &lt;&lt; <span class="string">&#x27; &#x27;</span>&lt;&lt; a &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cbrid</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Cpeople op2;   <span class="comment">//类内可以套类</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        op2.<span class="built_in">fun</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Cpeople op1;</span><br><span class="line">    op1.<span class="built_in">fun</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Cpeople op;</span><br><span class="line">    op.a = <span class="number">122</span>;</span><br><span class="line">    op.<span class="built_in">fun</span>();</span><br><span class="line">    op.a = <span class="number">12</span>;</span><br><span class="line">    <span class="built_in">fun1</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>C++</category>
