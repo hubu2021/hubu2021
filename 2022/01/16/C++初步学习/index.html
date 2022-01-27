@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/01/24/cAoS4hfe7sMTWxp.png">
 <meta property="og:image" content="https://s2.loli.net/2022/01/26/UOwcYSPrK4mQ9zL.png">
 <meta property="article:published_time" content="2022-01-16T01:54:20.000Z">
-<meta property="article:modified_time" content="2022-01-26T13:44:12.711Z">
+<meta property="article:modified_time" content="2022-01-27T03:01:08.721Z">
 <meta property="article:author" content="渡">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s2.loli.net/2022/01/19/oe36hVriAPRGucD.jpg">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-26 21:44:12" itemprop="dateModified" datetime="2022-01-26T21:44:12+08:00">2022-01-26</time>
+                <time title="修改时间：2022-01-27 11:01:08" itemprop="dateModified" datetime="2022-01-27T11:01:08+08:00">2022-01-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +249,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.9k</span>
+              <span>8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,7 +272,7 @@
 <span id="more"></span>
 <h2 id="输出输入换行"><a href="#输出输入换行" class="headerlink" title="输出输入换行"></a>输出输入换行</h2><p>（1）输入cout：$\textcolor{red}{(属于对象)}$相比于C语言中的printf更加的智能，能够$\textcolor{red}{自动识别数据的类型}$，可连续输出，并且能够换行输出,“&lt;&lt;”是<code>输出运算符</code></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">char</span> c = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    <span class="keyword">float</span> d = <span class="number">123.12f</span>;</span><br><span class="line">    <span class="keyword">double</span> e = <span class="number">123.1</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; c &lt;&lt;<span class="string">&#x27; &#x27;</span></span><br><span class="line">         &lt;&lt; d &lt;&lt; <span class="string">&#x27; &#x27;</span>&lt;&lt; e; <span class="comment">/*printf不能直接这样，而						是要用续行符&#x27;\&#x27;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​    ( 2 )  输入cin:：$\textcolor{red}{(属于对象)}$，可连续输入，也会自动识别变量的类型。“&gt;&gt;”是输入运算符。</p>
+<p>​    ( 2 )  输入cin：$\textcolor{red}{(属于对象)}$，可连续输入，也会自动识别变量的类型。“&gt;&gt;”是输入运算符，<font color=red>遇到空格输入结束</font>。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a;</span><br><span class="line">    <span class="keyword">float</span> b;</span><br><span class="line">    <span class="keyword">int</span> c;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;请输入\n&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;<span class="string">&#x27;\n&#x27;</span>&lt;&lt; b &lt;&lt; <span class="string">&#x27;\n&#x27;</span> &lt;&lt; c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>​    ( 3 ) 换行endl：换行，并且$\textcolor{red}{清空缓冲区}$；当然也可以使用C语言中的’\n’$\textcolor{red}{(\n相当于一个字符，在C语言中有学)}$,但该字符没有清空缓冲区的作用。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;hello world \n&quot;</span>;</span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;hello C3&quot;</span>&lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;asdf&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -324,6 +324,7 @@
 <blockquote>
 <p>释放空间要适配：释放单个空间用delete + 指针，</p>
 <p>​                                释放数组空间用delete[] +指针（要带方括号）</p>
+<p>即 “new&amp;delete”用于为一个实体分配内存，而“new[]&amp;delete[]”用于为数组分配内存。</p>
 <p>memset():用于内存初始化的“万能函数”，通常为新申请的内存进行初始化工作函数原型为</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memset</span><span class="params">(<span class="keyword">void</span> *p,<span class="keyword">int</span> c,<span class="keyword">unsigned</span> <span class="keyword">long</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>调用方法：申请空间后：memset(p,0,sizeof(*p));</p>
@@ -494,14 +495,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -575,7 +576,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">47k</span>
+    <span title="站点总字数">48k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
