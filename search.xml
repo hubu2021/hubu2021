@@ -141,158 +141,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Python之字符串类型（一）</title>
-    <url>/2022/01/20/Python%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/5og9ktiUXYLu8j2.jpg" alt="wallhaven-g75r7d"></p>
-<span id="more"></span>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>例如：<font color=blue>(既可以用单引号，也可以用双引号,三引号)</font></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">b = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line">c =<span class="string">&#x27;&#x27;&#x27;aaaaaa&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：控制台显示结果为<code>&lt;class &#39;str&#39;&gt;</code>， 即数据类型为str(字符串)。</p>
-</blockquote>
-<h2 id="1-1-字符串特征"><a href="#1-1-字符串特征" class="headerlink" title="1.1 字符串特征"></a>1.1 字符串特征</h2><ul>
-<li>一对引号字符串</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name1 = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">name2 = <span class="string">&quot;TOM&quot;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>三引号字符串</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name3 = <span class="string">&#x27;&#x27;&#x27; Tom &#x27;&#x27;&#x27;</span></span><br><span class="line">name4 = <span class="string">&quot;&quot;&quot; Rose &quot;&quot;&quot;</span></span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27; I am Tom, </span></span><br><span class="line"><span class="string">        nice to meet you! &#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">&quot;&quot;&quot; I am Rose, </span></span><br><span class="line"><span class="string">        nice to meet you! &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：<font color=blue>三引号形式的字符串支持换行。</font></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = <span class="string">&quot;I&#x27;m Tom&quot;</span></span><br><span class="line">d = <span class="string">&#x27;I\&#x27;m Tom&#x27;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果要打印<code>I\&#39;m Tom</code>，要用转义字符     <font color=blue>\ </font></p>
-</blockquote>
-<h2 id="1-2-字符串输出"><a href="#1-2-字符串输出" class="headerlink" title="1.2 字符串输出"></a>1.2 字符串输出</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line">name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="1-3-字符串输入"><a href="#1-3-字符串输入" class="headerlink" title="1.3 字符串输入"></a>1.3 字符串输入</h2><p>在Python中，使用<code>input()</code>接收用户输入。</p>
-<ul>
-<li>代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的名字：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br><span class="line"></span><br><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的密码：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的密码是<span class="subst">&#123;password&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>输出结果</p>
-<p><img src="https://s2.loli.net/2022/01/20/oqZkRzCD6xSYWaG.png" alt="image-20220120101330015"></p>
-<font color=red>前面提到过，input()输入的均为字符串类型</font>
-
-</li>
-</ul>
-<h2 id="下标：即编号"><a href="#下标：即编号" class="headerlink" title="下标：即编号"></a>下标：即编号</h2><h3 id="2-1-使用下标"><a href="#2-1-使用下标" class="headerlink" title="2.1 使用下标"></a>2.1 使用下标</h3><blockquote>
- <font color=red>从0开始</font>
-
-</blockquote>
-<ul>
-<li>代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;asdfgh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>]) <span class="comment"># s</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>]) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>]) <span class="comment"># d</span></span><br></pre></td></tr></table></figure>
-<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
-<h3 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">序列[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意</p>
-</blockquote>
-<pre><code>   1. &lt;font color=red&gt;不包含结束位置下标对应的数据&lt;/font&gt;， 正负整数均可；
-            2. 步长是选取间隔，正负整数均可，默认步长为1。
-</code></pre><h3 id="3-2-体验"><a href="#3-2-体验" class="headerlink" title="3.2 体验"></a>3.2 体验</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef,负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
-<h2 id="常用操作方法"><a href="#常用操作方法" class="headerlink" title="常用操作方法"></a>常用操作方法</h2><p>字符串的常用操作方法有<font color=orange>查找、修改和判断</font>三大类。</p>
-<h3 id="4-1-查找"><a href="#4-1-查找" class="headerlink" title="4.1 查找"></a>4.1 查找</h3><p>所谓字符串查找方法即是查找子串在字符串中的位置或出现的次数。</p>
-<ul>
-<li>find()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则返回-1。</font></li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.find(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># -1</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>index()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则报异常</font>。</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.index(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>rfind()： 和find()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
-<li>rindex()：和index()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
-<li>count()：返回某个子串在字符串中出现的次数</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.count(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>, <span class="number">0</span>, <span class="number">20</span>))  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-2-修改"><a href="#4-2-修改" class="headerlink" title="4.2 修改"></a>4.2 修改</h3><p>所谓修改字符串，指的就是通过函数的形式修改字符串中的数据。</p>
-<ul>
-<li>replace()：替换<font color=blue>(原数据不会被修改，有返回值)</font></li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.replace(旧子串, 新子串, 替换次数)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：替换次数如果查出子串出现次数，则替换次数为该子串出现次数。</p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Rose and Tom and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>, <span class="number">10</span>))</span><br><span class="line"><span class="comment"># 结果：hello world and Rose and Tom and Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：数据按照是否能直接修改分为<font color=redg>可变类型</font>和<font color=redg>不可变类型</font>两种。字符串类型的数据修改的时候不能改变原有字符串，属于不能直接修改数据的类型即是不可变类型。</p>
-</blockquote>
-<ul>
-<li>split()：按照指定字符分割字符串。</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.split(分割字符, num)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：num表示的是分割字符出现的次数，即将来<font color=red>返回数据个数为num+1个</font>。<font color=blue>分割字符丢失</font></p>
-</blockquote>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima &#x27;, &#x27; Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and&#x27;, &#x27;itcast&#x27;, &#x27;and&#x27;, &#x27;itheima&#x27;, &#x27;and&#x27;, &#x27;Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and itcast and itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：如果分割字符是原有字符串中的子串，分割后则丢失该子串。</p>
-</blockquote>
-<ul>
-<li>join()：用一个字符或子串合并字符串，即是将多个字符串合并为一个新的字符串。</li>
-</ul>
-<ol>
-<li>语法</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">用于连接字符或子串.join(多字符串组成的序列)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>快速体验</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;chuan&#x27;</span>, <span class="string">&#x27;zhi&#x27;</span>, <span class="string">&#x27;bo&#x27;</span>, <span class="string">&#x27;ke&#x27;</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>)</span><br><span class="line"><span class="comment"># 结果：chuan_zhi_bo_ke</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;_&#x27;</span>.join(list1))</span><br><span class="line"><span class="comment"># 结果：aa...b...cc...ddd</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;...&#x27;</span>.join(t1))</span><br></pre></td></tr></table></figure>
-<p>&lt;大小写转换函数不重要，了解即可，省略&gt;</p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python之其他数据类型（二）</title>
     <url>/2022/01/21/Python%E4%B9%8B%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/21/sofyAeQK9p6VTvc.jpg" alt=""></p>
@@ -667,6 +515,158 @@
       </categories>
   </entry>
   <entry>
+    <title>Python之字符串类型（一）</title>
+    <url>/2022/01/20/Python%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/5og9ktiUXYLu8j2.jpg" alt="wallhaven-g75r7d"></p>
+<span id="more"></span>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>例如：<font color=blue>(既可以用单引号，也可以用双引号,三引号)</font></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line">b = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line">c =<span class="string">&#x27;&#x27;&#x27;aaaaaa&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(c))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：控制台显示结果为<code>&lt;class &#39;str&#39;&gt;</code>， 即数据类型为str(字符串)。</p>
+</blockquote>
+<h2 id="1-1-字符串特征"><a href="#1-1-字符串特征" class="headerlink" title="1.1 字符串特征"></a>1.1 字符串特征</h2><ul>
+<li>一对引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name1 = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line">name2 = <span class="string">&quot;TOM&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>三引号字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name3 = <span class="string">&#x27;&#x27;&#x27; Tom &#x27;&#x27;&#x27;</span></span><br><span class="line">name4 = <span class="string">&quot;&quot;&quot; Rose &quot;&quot;&quot;</span></span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27; I am Tom, </span></span><br><span class="line"><span class="string">        nice to meet you! &#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">&quot;&quot;&quot; I am Rose, </span></span><br><span class="line"><span class="string">        nice to meet you! &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：<font color=blue>三引号形式的字符串支持换行。</font></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = <span class="string">&quot;I&#x27;m Tom&quot;</span></span><br><span class="line">d = <span class="string">&#x27;I\&#x27;m Tom&#x27;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要打印<code>I\&#39;m Tom</code>，要用转义字符     <font color=blue>\ </font></p>
+</blockquote>
+<h2 id="1-2-字符串输出"><a href="#1-2-字符串输出" class="headerlink" title="1.2 字符串输出"></a>1.2 字符串输出</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line">name = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;我的名字是%s&#x27;</span> % name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;我的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-字符串输入"><a href="#1-3-字符串输入" class="headerlink" title="1.3 字符串输入"></a>1.3 字符串输入</h2><p>在Python中，使用<code>input()</code>接收用户输入。</p>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的名字：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的名字是<span class="subst">&#123;name&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(name))</span><br><span class="line"></span><br><span class="line">password = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的密码：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;您输入的密码是<span class="subst">&#123;password&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(password))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>输出结果</p>
+<p><img src="https://s2.loli.net/2022/01/20/oqZkRzCD6xSYWaG.png" alt="image-20220120101330015"></p>
+<font color=red>前面提到过，input()输入的均为字符串类型</font>
+
+</li>
+</ul>
+<h2 id="下标：即编号"><a href="#下标：即编号" class="headerlink" title="下标：即编号"></a>下标：即编号</h2><h3 id="2-1-使用下标"><a href="#2-1-使用下标" class="headerlink" title="2.1 使用下标"></a>2.1 使用下标</h3><blockquote>
+ <font color=red>从0开始</font>
+
+</blockquote>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;asdfgh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>]) <span class="comment"># s</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">0</span>]) <span class="comment"># a</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>]) <span class="comment"># d</span></span><br></pre></td></tr></table></figure>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片是指对操作的对象截取其中一部分的操作。<strong>字符串、列表、元组</strong>都支持切片操作。</p>
+<h3 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">序列[开始位置下标:结束位置下标:步长]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<pre><code>   1. &lt;font color=red&gt;不包含结束位置下标对应的数据&lt;/font&gt;， 正负整数均可；
+            2. 步长是选取间隔，正负整数均可，默认步长为1。
+</code></pre><h3 id="3-2-体验"><a href="#3-2-体验" class="headerlink" title="3.2 体验"></a>3.2 体验</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>:<span class="number">1</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># cde</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">5</span>])  <span class="comment"># abcde</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">1</span>:])  <span class="comment"># bcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[:])  <span class="comment"># abcdefg</span></span><br><span class="line"><span class="built_in">print</span>(name[::<span class="number">2</span>])  <span class="comment"># aceg</span></span><br><span class="line"><span class="built_in">print</span>(name[:-<span class="number">1</span>])  <span class="comment"># abcdef,负1表示倒数第一个数据</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">4</span>:-<span class="number">1</span>])  <span class="comment"># def</span></span><br><span class="line"><span class="built_in">print</span>(name[::-<span class="number">1</span>])  <span class="comment"># gfedcba</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用操作方法"><a href="#常用操作方法" class="headerlink" title="常用操作方法"></a>常用操作方法</h2><p>字符串的常用操作方法有<font color=orange>查找、修改和判断</font>三大类。</p>
+<h3 id="4-1-查找"><a href="#4-1-查找" class="headerlink" title="4.1 查找"></a>4.1 查找</h3><p>所谓字符串查找方法即是查找子串在字符串中的位置或出现的次数。</p>
+<ul>
+<li>find()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则返回-1。</font></li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.find(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.find(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># -1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>index()：检测某个子串是否包含在这个字符串中，如果在<font color=red>返回这个子串开始的位置下标，否则则报异常</font>。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.index(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 12</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;and&#x27;</span>, <span class="number">15</span>, <span class="number">30</span>))  <span class="comment"># 23</span></span><br><span class="line"><span class="built_in">print</span>(mystr.index(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 报错</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>rfind()： 和find()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
+<li>rindex()：和index()功能相同，但查找方向为<font color=orange>右侧</font>开始。</li>
+<li>count()：返回某个子串在字符串中出现的次数</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.count(子串, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：开始和结束位置下标可以省略，表示在整个字符串序列中查找。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;ands&#x27;</span>))  <span class="comment"># 0</span></span><br><span class="line"><span class="built_in">print</span>(mystr.count(<span class="string">&#x27;and&#x27;</span>, <span class="number">0</span>, <span class="number">20</span>))  <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-修改"><a href="#4-2-修改" class="headerlink" title="4.2 修改"></a>4.2 修改</h3><p>所谓修改字符串，指的就是通过函数的形式修改字符串中的数据。</p>
+<ul>
+<li>replace()：替换<font color=blue>(原数据不会被修改，有返回值)</font></li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.replace(旧子串, 新子串, 替换次数)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：替换次数如果查出子串出现次数，则替换次数为该子串出现次数。</p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and Rose and Tom and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：hello world he Rose he Tom he Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr.replace(<span class="string">&#x27;and&#x27;</span>, <span class="string">&#x27;he&#x27;</span>, <span class="number">10</span>))</span><br><span class="line"><span class="comment"># 结果：hello world and Rose and Tom and Python</span></span><br><span class="line"><span class="built_in">print</span>(mystr)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：数据按照是否能直接修改分为<font color=redg>可变类型</font>和<font color=redg>不可变类型</font>两种。字符串类型的数据修改的时候不能改变原有字符串，属于不能直接修改数据的类型即是不可变类型。</p>
+</blockquote>
+<ul>
+<li>split()：按照指定字符分割字符串。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">字符串序列.split(分割字符, num)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：num表示的是分割字符出现的次数，即将来<font color=red>返回数据个数为num+1个</font>。<font color=blue>分割字符丢失</font></p>
+</blockquote>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">mystr = <span class="string">&quot;hello world and itcast and itheima and Python&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima &#x27;, &#x27; Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello world &#x27;, &#x27; itcast &#x27;, &#x27; itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27;and&#x27;</span>, <span class="number">2</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and&#x27;, &#x27;itcast&#x27;, &#x27;and&#x27;, &#x27;itheima&#x27;, &#x27;and&#x27;, &#x27;Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="comment"># 结果：[&#x27;hello&#x27;, &#x27;world&#x27;, &#x27;and itcast and itheima and Python&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(mystr.split(<span class="string">&#x27; &#x27;</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果分割字符是原有字符串中的子串，分割后则丢失该子串。</p>
+</blockquote>
+<ul>
+<li>join()：用一个字符或子串合并字符串，即是将多个字符串合并为一个新的字符串。</li>
+</ul>
+<ol>
+<li>语法</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">用于连接字符或子串.join(多字符串组成的序列)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>快速体验</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;chuan&#x27;</span>, <span class="string">&#x27;zhi&#x27;</span>, <span class="string">&#x27;bo&#x27;</span>, <span class="string">&#x27;ke&#x27;</span>]</span><br><span class="line">t1 = (<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>, <span class="string">&#x27;ddd&#x27;</span>)</span><br><span class="line"><span class="comment"># 结果：chuan_zhi_bo_ke</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;_&#x27;</span>.join(list1))</span><br><span class="line"><span class="comment"># 结果：aa...b...cc...ddd</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;...&#x27;</span>.join(t1))</span><br></pre></td></tr></table></figure>
+<p>&lt;大小写转换函数不重要，了解即可，省略&gt;</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python之文件操作</title>
     <url>/2022/01/23/Python%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/23/ZXomgMivcwPYExk.jpg" style="zoom: 80%;" /></p>
@@ -965,6 +965,203 @@
       </categories>
   </entry>
   <entry>
+    <title>大一上学期英语期末翻译重点</title>
+    <url>/2021/12/28/%E5%A4%A7%E4%B8%80%E4%B8%8A%E5%AD%A6%E6%9C%9F%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E9%87%8D%E7%82%B9/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/07/TXr6YzN8npsGo2g.jpg" alt=""></p>
+<h2 id="英语U1课本翻译"><a href="#英语U1课本翻译" class="headerlink" title="英语U1课本翻译"></a>英语U1课本翻译</h2><p><strong>今天，很多中国的大学非常重视培养学生的创新意识和创业精神（entrepreneurship）。很多知名大学与多家公司建立长期的合作关系。这些公司会定期从大学中录用合格的毕业生。此外，<span id="more"></span>有些校友还创建启动资金，支持学生创办自己的企业。一些大学的校长表示，创业与学习并不矛盾，鼓励学生创业可以帮助他们将专业知识应用于实践，提升自身的竞争力（竞争力）。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>Today, many Chinese universities attach great importance to cultivating innovation awareness and entrepreneurship. Many prestigious universities establish long-term relationships with a lot of companies. These companies recruit qualified graduates from the universities on a regular basis. What’s more, some alumni even create start-up funds to support students in starting their own business. The presidents of some universities say that doing business and studying are not in conflict and that encouraging students to set up businesses can help them put their specialized knowledge into practice and raise their competitiveness.</em></strong></p>
+<hr>
+<h2 id="英语U2课本翻译"><a href="#英语U2课本翻译" class="headerlink" title="英语U2课本翻译"></a>英语U2课本翻译</h2><p><strong>中国药膳（Chinese medicated diet） 源远流长，是中国宝贵的文化遗产，也是中医养生学的重要内容。药膳对预防疾病和强身健体有着显著的功效。比如，把冰糖和梨放在一起蒸是很好的药膳，可以起到润肺（moisten lung） 、化痰（dissolve phlegm） 、止咳（arrest cough）的作用。药膳不仅具有药物的疗效，还具有食物的美味。药膳是中国人日常饮食的重要组成部分，现在就连外国人也开始喜爱、接受中国药膳。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>Chinese medicated diets have a long history. They are part of the valuable cultural heritage of China and an important part of Chinese health study. Medicated diets have a notable effect on the prevention of diseases and improvement of physical fitness. For example, pear steamed with rock sugar is a medicated diet, good for moistening the lung, dissolving phlegm and arresting cough. Chinese medicated diets have not only the efficiency of medicine, but also the delicacy of food. They are an important part of Chinese people’s daily meals. Even people from other countries have come to love and consume Chinese medicated diets.</em></strong></p>
+<hr>
+<h2 id="英语U4课本翻译"><a href="#英语U4课本翻译" class="headerlink" title="英语U4课本翻译"></a>英语U4课本翻译</h2><p><strong>中国的父母历来重视孩子的教育。他们认为，如果孩子做事时能得到大人适当的指导，就会更愿意完成复杂的工作，因此，“手把手教”被视为教育孩子的最佳方式。近年来，受西方教育观念的影响，中国的父母开始注重培养孩子的独立性和创造力。他们鼓励孩子参加兴趣班学习绘画或音乐，希望孩子通过不断的学习和探索而获得全面的发展。</strong></p>
+<p><strong>Translation </strong></p>
+<p><strong><em>Chinese parents pay a lot of attention to their children’s education. They hold that children are more willing to accomplish complicated tasks if adults can give them proper guidance. Therefore, “teaching by giving step-by-step directions” is taken as the best way to educate children. In recent years, under the influence of Western ideas of education, Chinese parents are beginning to give more priority to fostering independence and creativity in children. They encourage their children to attend interest classes to learn painting or music. They hope that their children will become all-round individuals by constantly learning and exploring.</em></strong></p>
+<hr>
+<h2 id="英语U5课本翻译"><a href="#英语U5课本翻译" class="headerlink" title="英语U5课本翻译"></a>英语U5课本翻译</h2><p><strong>最近的调查显示，中国手机网民的数量超过电脑网民，网民的手机上网率高达85.8％。手机已成为继电视、广播、报纸、杂志之后的第五大媒体。中国人通过手机上网，享受微博、微信、播客（podcast）等新媒体所带来的便利与好处。新媒体生动、实时、互动的特点吸引了大批的年轻人。微信朋友圈让人们能够经常与朋友互动交流，而播客则满足了人们表达自我、张扬个性的需要。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>A recent survey indicated that the number of people accessing the Internet by mobile phone has overtaken the number of Internet users on computers. Online access on mobile phones has risen to 85.8%. The mobile phone has become the fifth mass medium after the traditional four media: television, radio, newspapers and magazines. With online access by mobile phone, Chinese people are enjoying the conveniences and benefits of all kinds of new media like MicroBlog, WeChat and podcasts. The vividness, real-timeness and interactivity of such media have attracted many young people. While WeChat’s circle of friends enables people to communicate and interact frequently with friends, podcasts meet people’s need for self-expression and displaying individuality.</em></strong></p>
+<hr>
+<h2 id="英语U7课本翻译"><a href="#英语U7课本翻译" class="headerlink" title="英语U7课本翻译"></a>英语U7课本翻译</h2><p><strong>中国的农历七月七日是七夕节，是牛郎（Cowherd）织女（Weaving Maid）一年一次相会的日子。七夕节源于一个浪漫的爱情故事：天上的织女和人间的牛郎互相爱慕，结为夫妻，后来却被拆散。二人化作织女星（Vega）和牛郎星（Altair），被银河分隔，遥遥相望，每年只能企盼七月七日在鹊桥（Magpie Bridge）相会。在这天晚上，有情男女都会祈祷姻缘美满。作为中国颇具浪漫色彩的民俗节日，七夕节又被称为“中国情人节”。</strong></p>
+<p><strong>Translation</strong></p>
+<p><strong><em>Qixi Festival celebrates the annual meeting of the Cowherd and the Weaving Maid on the seventh day of the seventh lunar month in China. The festival originates from a romantic love story. The Weaving Maid in the heaven and the Cowherd down on earth are attracted to each other and eventually get married. But later they are forced to break up. The two become the constellations Vega and the Altair, separated on either side of the Milky Way, and can only expect to meet each other once a year on Magpie Bridge. On that night, men and women that have affectionate feelings for each other will pray for a happy marriage. As the Qixi Festival is a traditional Chinese festival full of romance, it is also known as the “Chinese Valentine’s Day”.</em></strong></p>
+]]></content>
+      <categories>
+        <category>大学英语</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端学习笔记（一）</title>
+    <url>/2022/03/14/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/03/14/QusMr1CPvf5eq4T.jpg" alt="OIP-C"></p>
+<span id="more"></span>
+<p><h3> <b>网页总结：<b></p>
+<p>网页是图片、链接、文字、声音、视频等元素组成，其实就是一个html文件</p>
+<p>HTML: 超文本标记语言，用来制作网页的一门语言。由标签组成。比如图片标签、链接标签等。不属于编程语言。</p>
+<hr>
+<h4>web标准的构成</h4>
+
+<p>主要包括<font color=red>结构（Structure）</font>、<font color=red>表现（Presentation）</font>、<font color=red>和行为（Behavior）</font>三个方面。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>结构</td>
+<td>结构用于对<b>网页元素</b>进行整理和分类，现阶段主要是用HTML</td>
+</tr>
+<tr>
+<td>表现</td>
+<td>表现用于设置网页元素的版式、颜色、大小等<b>外观样式</b>，主要指CSS</td>
+</tr>
+<tr>
+<td>行为</td>
+<td>行为是指网页模型的定义及交互的编写，现阶段主要指JavaScript</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Web标准提出的最佳的体验方案：<font color=red>结构、样式行为相分离</font>。</p>
+<p>简单理解：<font color=red>结构写到HTML文件中，表现写在CSS文件中，行为写到Javascript文件中</font>。</p>
+<p>形象的比喻为：</p>
+<p><img src="https://s2.loli.net/2022/03/14/83G9Dc72ZgoyYMR.jpg" alt="img" style="zoom: 33%;" /></p>
+<h5>基本结构标签总结</h5>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>网页的标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">     主体部分</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.loli.net/2022/03/14/mVjrK3ZOPRC4sIo.png" alt="image-20220314125613178"></p>
+<h4>文本格式化标签</h4>
+
+<p>网页中，有时需要为文字设置<font color=red><b>粗体</b>、<em>斜体</em>或<ins>下划线</ins></font>等效果，这就需要使用的HTML中的文本格式化标签</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>语义</th>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加粗</td>
+<td><strong></strong>或者<b></b></td>
+<td>更推荐使用<strong>标签加粗</td>
+</tr>
+<tr>
+<td>倾斜</td>
+<td><em></em>或者<i></i></td>
+<td>更推荐使用<em>标签倾斜</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td><del></del>或者<s></s></td>
+<td>更推荐使用<del>标签</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td><ins></ins>或者<u></u></td>
+<td>更推荐使用<ins>标签</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>图像标签和路径</h4>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>图片路径</td>
+<td><font color=red>必需属性，不能省略</font></td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文本</td>
+<td>替换文本。图片不能显示时显示的文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td>文本</td>
+<td>提示文本。鼠标放在甜图片上显示的文字</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素</td>
+<td>设置图片宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>像素</td>
+<td>设置图片高度</td>
+</tr>
+<tr>
+<td>border</td>
+<td>像素</td>
+<td>设置图像的边框粗细</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>相对路径</h5>
+
+<font color=red><b>相对路径</b></font>:以<font color=red>引用的文件所在位置</font>为参考基础，而建立出的目录路径。
+
+简单来说就是，<font color=red>图片相对于HTML文件的位置</font>
+
+<p><img src="https://s2.loli.net/2022/03/14/1TcMkrwzd7qf2hU.png" alt="image-20220314191814044"></p>
+<p>超链接标签</p>
+<p>链接语法：(a是单词anchor的缩写，意为：锚)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;跳转的目标&quot;</span> <span class="attr">target</span>=<span class="string">&quot;目标窗口的弹出方式&quot;</span>&gt;</span>文本或图像<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>href</td>
+<td>用于指定链接目标的URL地址，（必需属性）当为标签应用href属性时，它就具有了超链接的功能</td>
+</tr>
+<tr>
+<td>target</td>
+<td>用于指定链接页面的打开方式，_self为默认值,_blank为在新窗口中打开</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>链接分类：</strong></p>
+<p>1.外部链接：例如&lt;a href=”网页地址”&gt;百度&lt;/a&gt;</p>
+<p>2.内部链接：网站内部页面之间相互链接。直接链接内部页面的名称即可。</p>
+<p>3.空链接：如果当时没确定链接目标时，用#，如&lt;a href=”#”&gt;首页&lt;/a&gt;</p>
+<p>4.下载链接：如果href里面的地址是一个文件或者压缩包，会下载这个文件。</p>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+  </entry>
+  <entry>
     <title>删除某些字符/子串</title>
     <url>/2021/12/15/%E5%88%A0%E9%99%A4%E6%9F%90%E4%BA%9B%E5%AD%97%E7%AC%A6/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/20/qWG54VTz1mskoFf.png" alt="wallhaven-d5l91o"></p>
@@ -991,38 +1188,6 @@
 ]]></content>
       <categories>
         <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>导航</tag>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大一上学期英语期末翻译重点</title>
-    <url>/2021/12/28/%E5%A4%A7%E4%B8%80%E4%B8%8A%E5%AD%A6%E6%9C%9F%E8%8B%B1%E8%AF%AD%E7%BF%BB%E8%AF%91%E9%87%8D%E7%82%B9/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/01/07/TXr6YzN8npsGo2g.jpg" alt=""></p>
-<h2 id="英语U1课本翻译"><a href="#英语U1课本翻译" class="headerlink" title="英语U1课本翻译"></a>英语U1课本翻译</h2><p><strong>今天，很多中国的大学非常重视培养学生的创新意识和创业精神（entrepreneurship）。很多知名大学与多家公司建立长期的合作关系。这些公司会定期从大学中录用合格的毕业生。此外，<span id="more"></span>有些校友还创建启动资金，支持学生创办自己的企业。一些大学的校长表示，创业与学习并不矛盾，鼓励学生创业可以帮助他们将专业知识应用于实践，提升自身的竞争力（竞争力）。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>Today, many Chinese universities attach great importance to cultivating innovation awareness and entrepreneurship. Many prestigious universities establish long-term relationships with a lot of companies. These companies recruit qualified graduates from the universities on a regular basis. What’s more, some alumni even create start-up funds to support students in starting their own business. The presidents of some universities say that doing business and studying are not in conflict and that encouraging students to set up businesses can help them put their specialized knowledge into practice and raise their competitiveness.</em></strong></p>
-<hr>
-<h2 id="英语U2课本翻译"><a href="#英语U2课本翻译" class="headerlink" title="英语U2课本翻译"></a>英语U2课本翻译</h2><p><strong>中国药膳（Chinese medicated diet） 源远流长，是中国宝贵的文化遗产，也是中医养生学的重要内容。药膳对预防疾病和强身健体有着显著的功效。比如，把冰糖和梨放在一起蒸是很好的药膳，可以起到润肺（moisten lung） 、化痰（dissolve phlegm） 、止咳（arrest cough）的作用。药膳不仅具有药物的疗效，还具有食物的美味。药膳是中国人日常饮食的重要组成部分，现在就连外国人也开始喜爱、接受中国药膳。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>Chinese medicated diets have a long history. They are part of the valuable cultural heritage of China and an important part of Chinese health study. Medicated diets have a notable effect on the prevention of diseases and improvement of physical fitness. For example, pear steamed with rock sugar is a medicated diet, good for moistening the lung, dissolving phlegm and arresting cough. Chinese medicated diets have not only the efficiency of medicine, but also the delicacy of food. They are an important part of Chinese people’s daily meals. Even people from other countries have come to love and consume Chinese medicated diets.</em></strong></p>
-<hr>
-<h2 id="英语U4课本翻译"><a href="#英语U4课本翻译" class="headerlink" title="英语U4课本翻译"></a>英语U4课本翻译</h2><p><strong>中国的父母历来重视孩子的教育。他们认为，如果孩子做事时能得到大人适当的指导，就会更愿意完成复杂的工作，因此，“手把手教”被视为教育孩子的最佳方式。近年来，受西方教育观念的影响，中国的父母开始注重培养孩子的独立性和创造力。他们鼓励孩子参加兴趣班学习绘画或音乐，希望孩子通过不断的学习和探索而获得全面的发展。</strong></p>
-<p><strong>Translation </strong></p>
-<p><strong><em>Chinese parents pay a lot of attention to their children’s education. They hold that children are more willing to accomplish complicated tasks if adults can give them proper guidance. Therefore, “teaching by giving step-by-step directions” is taken as the best way to educate children. In recent years, under the influence of Western ideas of education, Chinese parents are beginning to give more priority to fostering independence and creativity in children. They encourage their children to attend interest classes to learn painting or music. They hope that their children will become all-round individuals by constantly learning and exploring.</em></strong></p>
-<hr>
-<h2 id="英语U5课本翻译"><a href="#英语U5课本翻译" class="headerlink" title="英语U5课本翻译"></a>英语U5课本翻译</h2><p><strong>最近的调查显示，中国手机网民的数量超过电脑网民，网民的手机上网率高达85.8％。手机已成为继电视、广播、报纸、杂志之后的第五大媒体。中国人通过手机上网，享受微博、微信、播客（podcast）等新媒体所带来的便利与好处。新媒体生动、实时、互动的特点吸引了大批的年轻人。微信朋友圈让人们能够经常与朋友互动交流，而播客则满足了人们表达自我、张扬个性的需要。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>A recent survey indicated that the number of people accessing the Internet by mobile phone has overtaken the number of Internet users on computers. Online access on mobile phones has risen to 85.8%. The mobile phone has become the fifth mass medium after the traditional four media: television, radio, newspapers and magazines. With online access by mobile phone, Chinese people are enjoying the conveniences and benefits of all kinds of new media like MicroBlog, WeChat and podcasts. The vividness, real-timeness and interactivity of such media have attracted many young people. While WeChat’s circle of friends enables people to communicate and interact frequently with friends, podcasts meet people’s need for self-expression and displaying individuality.</em></strong></p>
-<hr>
-<h2 id="英语U7课本翻译"><a href="#英语U7课本翻译" class="headerlink" title="英语U7课本翻译"></a>英语U7课本翻译</h2><p><strong>中国的农历七月七日是七夕节，是牛郎（Cowherd）织女（Weaving Maid）一年一次相会的日子。七夕节源于一个浪漫的爱情故事：天上的织女和人间的牛郎互相爱慕，结为夫妻，后来却被拆散。二人化作织女星（Vega）和牛郎星（Altair），被银河分隔，遥遥相望，每年只能企盼七月七日在鹊桥（Magpie Bridge）相会。在这天晚上，有情男女都会祈祷姻缘美满。作为中国颇具浪漫色彩的民俗节日，七夕节又被称为“中国情人节”。</strong></p>
-<p><strong>Translation</strong></p>
-<p><strong><em>Qixi Festival celebrates the annual meeting of the Cowherd and the Weaving Maid on the seventh day of the seventh lunar month in China. The festival originates from a romantic love story. The Weaving Maid in the heaven and the Cowherd down on earth are attracted to each other and eventually get married. But later they are forced to break up. The two become the constellations Vega and the Altair, separated on either side of the Milky Way, and can only expect to meet each other once a year on Magpie Bridge. On that night, men and women that have affectionate feelings for each other will pray for a happy marriage. As the Qixi Festival is a traditional Chinese festival full of romance, it is also known as the “Chinese Valentine’s Day”.</em></strong></p>
-]]></content>
-      <categories>
-        <category>大学英语</category>
       </categories>
       <tags>
         <tag>导航</tag>
@@ -1110,13 +1275,33 @@
       </tags>
   </entry>
   <entry>
-    <title>打印年历表</title>
-    <url>/2021/12/21/%E6%89%93%E5%8D%B0%E5%B9%B4%E5%8E%86%E8%A1%A8/</url>
-    <content><![CDATA[<h1 id="打印年历表"><a href="#打印年历表" class="headerlink" title="打印年历表"></a>打印年历表</h1><span id="more"></span>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">int</span> year;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;请输入一个年份，打印该年年历：&quot;</span>);</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;year);</span><br><span class="line"></span><br><span class="line">   printCal(year);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>((year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>)||year%<span class="number">400</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (((year<span class="number">-1</span>)*<span class="number">365</span>+(year<span class="number">-1</span>)/<span class="number">4</span>-(year<span class="number">-1</span>)/<span class="number">100</span>+(year<span class="number">-1</span>)/<span class="number">400</span>)+<span class="number">1</span>)%<span class="number">7</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(month)</span><br><span class="line">	&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">12</span>:<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">11</span>:<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">2</span>:<span class="keyword">if</span>(isLeapYear(year))<span class="keyword">return</span> <span class="number">29</span>;</span><br><span class="line">		  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">28</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printMonth</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fday,days,i,j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;==========%d月=========\n&quot;</span>,month);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; 日 一 二 三 四 五 六\n&quot;</span>);</span><br><span class="line">    fday=firstDay(year);</span><br><span class="line">    days=monthDays(year,month);</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=fday;j++)<span class="built_in">printf</span>(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=days;i++)</span><br><span class="line">	&#123;  </span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,i);</span><br><span class="line">	  j++;</span><br><span class="line">	  <span class="keyword">if</span>(j%<span class="number">7</span>==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;========%d年年历=======\n&quot;</span>,year);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">12</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printMonth(year,i);</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>浅拷贝与深拷贝</title>
+    <url>/2022/02/10/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/02/10/pDCjEtFn5YeU48d.jpg" alt=""></p>
+<span id="more"></span>
+<h1 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h1><h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><ul>
+<li>简单的赋值拷贝操作</li>
+</ul>
+<table><tr><td bgcolor=yellow>浅拷贝带来的问题：堆区内存重复释放</td></tr></table>
+
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Person</span>(<span class="keyword">int</span> a,<span class="keyword">int</span> Age)</span><br><span class="line">    &#123;</span><br><span class="line">        age = Age</span><br><span class="line">        num = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(a);<span class="comment">//将空间开辟在堆区，需要人为释放</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Person</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt;<span class="string">&quot;默认无参&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Person</span>(<span class="keyword">const</span> Person &amp;p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;num = p.num;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;浅拷贝&quot;</span> &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Person</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(num!=<span class="literal">NULL</span>)<span class="comment">//判断申请的空间是否释放</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">delete</span> num;</span><br><span class="line">            num = <span class="literal">NULL</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt;<span class="string">&quot;析构函数&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> age</span><br><span class="line">    <span class="keyword">int</span> *num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">10</span>,<span class="number">66</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br><span class="line">    cout &lt;&lt; *p1.num&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt; *p2.num&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：程序崩溃(CLion)</p>
+<p><img src="https://s2.loli.net/2022/02/10/di357bWYvTqPJuG.png" alt="image-20220210215904174"></p>
+<p><strong><font size=7> 存在的问题和解决方法</font></strong></p>
+<p><img src="https://s2.loli.net/2022/02/10/cKlmTuwF7bMBdEt.png" alt="image-20220210221905205"></p>
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><ul>
+<li>在堆区重新申请空间，进行拷贝操作</li>
+</ul>
+<p>&lt;先进后出，所以拷贝的先被释放&gt;</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//无参（默认）构造函数</span></span><br><span class="line">	<span class="built_in">Person</span>() &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;无参构造函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//有参构造函数</span></span><br><span class="line">	<span class="built_in">Person</span>(<span class="keyword">int</span> age ,<span class="keyword">int</span> height) &#123;</span><br><span class="line">		</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;有参构造函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">		m_age = age;</span><br><span class="line">		m_height = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(height);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//拷贝构造函数  </span></span><br><span class="line">	<span class="built_in">Person</span>(<span class="keyword">const</span> Person&amp; p) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;拷贝构造函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="comment">//如果不利用深拷贝在堆区创建新内存，会导致浅拷贝带来的重复释放堆区问题</span></span><br><span class="line">		m_age = p.m_age;</span><br><span class="line">		m_height = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(*p.m_height);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//析构函数</span></span><br><span class="line">	~<span class="built_in">Person</span>() &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;析构函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">if</span> (m_height != <span class="literal">NULL</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">delete</span> m_height;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> m_age;</span><br><span class="line">	<span class="keyword">int</span>* m_height;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">18</span>, <span class="number">180</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br><span class="line"></span><br><span class="line">	cout  &lt;&lt; *p1.m_height &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; *p2.m_height &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>总结：如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>C语言</category>
+        <category>C++</category>
       </categories>
   </entry>
   <entry>
@@ -1161,33 +1346,13 @@
       </tags>
   </entry>
   <entry>
-    <title>浅拷贝与深拷贝</title>
-    <url>/2022/02/10/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/</url>
-    <content><![CDATA[<p><img src="https://s2.loli.net/2022/02/10/pDCjEtFn5YeU48d.jpg" alt=""></p>
-<span id="more"></span>
-<h1 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h1><h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><ul>
-<li>简单的赋值拷贝操作</li>
-</ul>
-<table><tr><td bgcolor=yellow>浅拷贝带来的问题：堆区内存重复释放</td></tr></table>
-
-<p><strong>示例：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Person</span>(<span class="keyword">int</span> a,<span class="keyword">int</span> Age)</span><br><span class="line">    &#123;</span><br><span class="line">        age = Age</span><br><span class="line">        num = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(a);<span class="comment">//将空间开辟在堆区，需要人为释放</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Person</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt;<span class="string">&quot;默认无参&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Person</span>(<span class="keyword">const</span> Person &amp;p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;num = p.num;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;浅拷贝&quot;</span> &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Person</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(num!=<span class="literal">NULL</span>)<span class="comment">//判断申请的空间是否释放</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">delete</span> num;</span><br><span class="line">            num = <span class="literal">NULL</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt;<span class="string">&quot;析构函数&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> age</span><br><span class="line">    <span class="keyword">int</span> *num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">10</span>,<span class="number">66</span>)</span></span>;</span><br><span class="line">    <span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br><span class="line">    cout &lt;&lt; *p1.num&lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt; *p2.num&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：程序崩溃(CLion)</p>
-<p><img src="https://s2.loli.net/2022/02/10/di357bWYvTqPJuG.png" alt="image-20220210215904174"></p>
-<p><strong><font size=7> 存在的问题和解决方法</font></strong></p>
-<p><img src="https://s2.loli.net/2022/02/10/cKlmTuwF7bMBdEt.png" alt="image-20220210221905205"></p>
-<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><ul>
-<li>在堆区重新申请空间，进行拷贝操作</li>
-</ul>
-<p>&lt;先进后出，所以拷贝的先被释放&gt;</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//无参（默认）构造函数</span></span><br><span class="line">	<span class="built_in">Person</span>() &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;无参构造函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//有参构造函数</span></span><br><span class="line">	<span class="built_in">Person</span>(<span class="keyword">int</span> age ,<span class="keyword">int</span> height) &#123;</span><br><span class="line">		</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;有参构造函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">		m_age = age;</span><br><span class="line">		m_height = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(height);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//拷贝构造函数  </span></span><br><span class="line">	<span class="built_in">Person</span>(<span class="keyword">const</span> Person&amp; p) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;拷贝构造函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="comment">//如果不利用深拷贝在堆区创建新内存，会导致浅拷贝带来的重复释放堆区问题</span></span><br><span class="line">		m_age = p.m_age;</span><br><span class="line">		m_height = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(*p.m_height);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//析构函数</span></span><br><span class="line">	~<span class="built_in">Person</span>() &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;析构函数!&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">if</span> (m_height != <span class="literal">NULL</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">delete</span> m_height;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> m_age;</span><br><span class="line">	<span class="keyword">int</span>* m_height;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">18</span>, <span class="number">180</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function">Person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br><span class="line"></span><br><span class="line">	cout  &lt;&lt; *p1.m_height &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; *p2.m_height &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>总结：如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题</p>
-</blockquote>
+    <title>打印年历表</title>
+    <url>/2021/12/21/%E6%89%93%E5%8D%B0%E5%B9%B4%E5%8E%86%E8%A1%A8/</url>
+    <content><![CDATA[<h1 id="打印年历表"><a href="#打印年历表" class="headerlink" title="打印年历表"></a>打印年历表</h1><span id="more"></span>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span>;</span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">int</span> year;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;请输入一个年份，打印该年年历：&quot;</span>);</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;year);</span><br><span class="line"></span><br><span class="line">   printCal(year);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isLeapYear</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>((year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>)||year%<span class="number">400</span>==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">firstDay</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (((year<span class="number">-1</span>)*<span class="number">365</span>+(year<span class="number">-1</span>)/<span class="number">4</span>-(year<span class="number">-1</span>)/<span class="number">100</span>+(year<span class="number">-1</span>)/<span class="number">400</span>)+<span class="number">1</span>)%<span class="number">7</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">monthDays</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(month)</span><br><span class="line">	&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">12</span>:<span class="keyword">return</span> <span class="number">31</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">11</span>:<span class="keyword">return</span> <span class="number">30</span>;</span><br><span class="line">	  <span class="keyword">case</span> <span class="number">2</span>:<span class="keyword">if</span>(isLeapYear(year))<span class="keyword">return</span> <span class="number">29</span>;</span><br><span class="line">		  <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">28</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printMonth</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fday,days,i,j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;==========%d月=========\n&quot;</span>,month);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot; 日 一 二 三 四 五 六\n&quot;</span>);</span><br><span class="line">    fday=firstDay(year);</span><br><span class="line">    days=monthDays(year,month);</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=fday;j++)<span class="built_in">printf</span>(<span class="string">&quot;   &quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=days;i++)</span><br><span class="line">	&#123;  </span><br><span class="line">	  <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,i);</span><br><span class="line">	  j++;</span><br><span class="line">	  <span class="keyword">if</span>(j%<span class="number">7</span>==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">printCal</span><span class="params">(<span class="keyword">int</span> year)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;========%d年年历=======\n&quot;</span>,year);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">12</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printMonth(year,i);</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>C++</category>
+        <category>C语言</category>
       </categories>
   </entry>
   <entry>
